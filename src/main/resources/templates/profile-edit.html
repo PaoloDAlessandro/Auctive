@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <link rel="stylesheet" href="css/profile.css"/> -->
+    <!-- <link rel="stylesheet" href="fonts/stylesheet.css"/> -->
+    <title>Edit Profile</title>
+</head>
+
+<body id="profile-body">
+
+<section class="profile-data-section" id="profile-section">
+    <div>
+        <img src="img/profile/profile-avatar.png" class="profile-edit-image"/>
+
+        <p class="data-name">Username</p>
+        <input type="text" placeholder="Username" autocomplete="off" class="profile-edit-username">
+
+        <p class="name">Name</p>
+        <input type="text" placeholder="Name" autocomplete="off" class="profile-edit-username">
+
+        <p class="surname">Surname</p>
+        <input type="text" placeholder="Surname" autocomplete="off" class="profile-edit-username">
+
+        <p class="e-mail">E-mail</p>
+        <input type="text" placeholder="m.stefani@itsrizzoli.it" autocomplete="off" class="profile-edit-username">
+
+        <p>Sex</p>
+        <input type="radio" id="male" name="sex" value="1">
+        <label for="male">Male</label><br>
+        <input type="radio" id="female" name="sex" value="2">
+        <label for="female">Female</label><br>
+        <input type="radio" id="other" name="sex" value="0">
+        <label for="other">Other</label>
+
+        <p>Telephone Number</p>
+        <select placeholder="+39" class="profile-edit-username">
+            <option>+39</option>
+            <option>+45</option>
+            <option>+29</option>
+            <option>+31</option>
+        </select>
+        <input type="text" placeholder="Telephone number" autocomplete="off" class="profile-edit-username">
+
+        <p class="eta">Age</p>
+        <input type="text" placeholder="Age" autocomplete="off" class="profile-edit-username">
+    </div>
+</section>
+
+<section class="account-data-section" id="payment-section">
+    <h1 class="page-title">Payment methods</h1>
+
+    <div class="scroll-cards">
+        <div class="credit-card_div">
+
+            <img src="img/account/master.png" class="card-image"/>
+            <h2 class="card-number">**** **** **** **90</h2>
+            <h2 class="card-owner">Marco Stefani</h2>
+            <i class="fa-solid fa-trash-can"></i>
+
+        </div>
+
+        <div class="credit-card_div">
+
+            <img src="img/account/master.png" class="card-image"/>
+            <h2 class="card-number">**** **** **** **45</h2>
+            <h2 class="card-owner">Marco Stefani</h2>
+            <i class="fa-solid fa-trash-can"></i>
+
+        </div>
+
+        <div class="credit-card_div">
+
+            <img src="img/account/master.png" class="card-image"/>
+            <h2 class="card-number">**** **** **** **45</h2>
+            <h2 class="card-owner">Marco Stefani</h2>
+            <i class="fa-solid fa-trash-can"></i>
+
+        </div>
+
+    </div>
+
+    <div class="card-information-div" id="card-information-div">
+        <i class="fa-solid fa-x" id="close-tab"></i>
+        <input class="card-info-name" type="text" placeholder="Nome"/>
+        <input class="card-info-surname" type="text" placeholder="Cognome"/>
+        <input class="card-info-number" type="text" placeholder="Numero della carta"/>
+        <input class="card-info-expiring-date" type="text" placeholder="Data di scadenza"/>
+        <input class="card-info-cvv" type="text" placeholder="CVV"/>
+
+        <input class="card-info-add" type="button" value="Add card"/>
+    </div>
+
+    <div class="bottom-div">
+        <i class="fa-solid fa-circle-plus" id="add-card"></i>
+    </div>
+</section>
+
+<section class="account-data-section" id="record-section">
+    <h1 class="page-title">Record delle attività effettuate</h1>
+
+    <h1 class="div-title">Aste effettuate</h1>
+
+    <div class="record-effettuate">
+        <p class="aste-partecipate">Aste partecipate:</p>
+        <p class="aste-partecipate_number">0</p>
+
+        <p class="aste-vinte">Aste vinte:</p>
+        <p class="aste-vinte_number">0</p>
+
+        </br>
+        </br>
+
+        <p class="totale-offerte">Totale offerte:</p>
+        <p class="totale-offerte_number">0</p>
+
+        <p class="aste-perse">Aste perse:</p>
+        <p class="aste-perse_number">0</p>
+    </div>
+</section>
+
+<script src="js/account.js"></script>
+<script src="https://kit.fontawesome.com/130673bc48.js" crossorigin="anonymous"></script>
+
+</body>
+</html>
