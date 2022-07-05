@@ -1,4 +1,4 @@
-package com.amazon.WebECommerce.model;
+package it.itsrizzoli.auctive.model;
 
 
 import javax.persistence.*;

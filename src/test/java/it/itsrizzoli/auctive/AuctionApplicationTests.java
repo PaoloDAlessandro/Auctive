@@ -1,4 +1,4 @@
-package com.amazon.WebECommerce;
+package it.itsrizzoli.auctive;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
