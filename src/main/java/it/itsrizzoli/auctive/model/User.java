@@ -3,12 +3,10 @@ package it.itsrizzoli.auctive.model;
 import java.util.Date;
 import java.util.HashSet;
 import java.util.Set;
-
 import javax.persistence.*;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
-
 
 @Entity
 @Table(name = "users")
@@ -73,7 +71,6 @@ public class User {
 		this.password = password;
 		this.birthDate = birthDate;
 		this.address = address;
-
 	}
 
 	public Long getId() {

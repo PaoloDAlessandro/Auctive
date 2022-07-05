@@ -4,10 +4,6 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
-
-//upload file
-
-
 @SpringBootApplication
 public class AuctionApplication implements CommandLineRunner {
 	public static void main(String[] args) {
@@ -15,7 +11,5 @@ public class AuctionApplication implements CommandLineRunner {
 	}
 
     @Override
-    public void run(String... args) {
-
-    }
+    public void run(String... args) {}
 }
