@@ -31,7 +31,7 @@ public class AuctionApplication implements CommandLineRunner {
         Product p2 = productRepository.findById(3);
 
         User u = userRepository.findById(4);
-        
+
         Cart c = new Cart();
         c.setCliente(u);
         c.setAcquistoData(new Date());
@@ -43,13 +43,16 @@ public class AuctionApplication implements CommandLineRunner {
         c1.setAcquistoData(new Date());
         c1.setProdotto(p2);
         cartRepository.save(c1);*/
-    	
+
     	/*List<Cart> carts = cartRepository.findByClienteId(4L);
     	System.out.print("");
-    	
+
     	User u2 = userRepository.findById(2L);
     	carts.get(0).setCliente(u2);
-    	
-    	cartRepository.save(carts.get(0));*/
+
+    	cartRepository.save(carts.get(0));
+
+
+    	prova commit Jimwell*/
     }
 }

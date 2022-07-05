@@ -29,7 +29,7 @@ public class UserController {
 	
 	@RequestMapping("/")
 	public String index() {
-		retur	n "usersignin";
+		return "usersignin";
 	}
 
     @RequestMapping(value="/list")  
