@@ -1,0 +1,91 @@
+.multiple-input {
+    display: flex;
+    justify-content: space-between;
+}
+
+.multiple-input input {
+    width: 48% !important;
+}
+
+.log-in .column-60 form input {
+    margin-bottom: 40px;
+}
+
+.log-in .alternative_log-in {
+    margin-top: 5vh;
+}
+
+.sign-in_no-account {
+    margin-top: 3vh !important;
+}
+
+.sign-up_title h1 {
+    font-weight: 500;
+    font-size: 32px;
+    color: #183153;
+}
+
+.sign-up_form {
+    margin-top: 4vh !important;
+}
+
+.input_god {
+    margin-bottom: 30px !important;
+}
+
+.sign-in_button {
+    margin-top: 0 !important;
+}
+
+#mobile_sign-in_next {
+    display: block;
+    padding: 16px 40px;
+    border-radius: 16px;
+    margin-left: auto;
+    margin-right: auto;
+    outline: none;
+    border: 0;
+    color: #183153;
+    font-weight: 600;
+    background-color: #FFD43B;
+    box-shadow: rgb(0 0 0 / 2%) 0px 1px 3px 0px, rgb(27 31 35 / 15%) 0px 0px 0px 1px;
+}
+
+#email_mobile {
+    display: none;
+}
+
+#username_mobile {
+    display: none;
+}
+
+#password_mobile {
+    display: none;
+}
+
+#confirm_password_mobile {
+    display: none;
+}
+
+@keyframes fade-in {
+
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes fade-out {
+
+    0% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+    }
+    
+}

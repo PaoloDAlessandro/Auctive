@@ -1,0 +1,320 @@
+body {
+    background-color: #F8FAFF;
+}
+
+.log-in {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-top: 4vh;
+    transform: translate(-50%,-50%);
+    background-color: #ffffff;
+    height: 80vh;
+    width: 70%;
+    border-radius: 8px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+}
+
+.log-in .column-40 {
+    position: relative;
+    display: flex;
+    width: 40%;
+    height: 100%;
+    float: left;
+    padding-top: 10vh;
+    flex-direction: column;
+    align-items: center;
+    background-color: #f0f1f37c;
+    border-right: 1px solid #a8a3a04d;
+}
+
+.log-in .column-40 .column-40_absolute {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -54%);
+}
+
+.log-in_title h1 {
+    font-weight: 500;
+    font-size: 32px;
+    color: #183153;
+}
+
+.log-in .column-40 .log-in_logo {
+    text-align: center;
+}
+
+.log-in .column-40 .log-in_logo img {
+    width: calc(100px + 1vw);
+}
+
+.log-in .column-40 .expert-esteem, .log-in .column-40 .auctive-coin {
+    margin-top: 10vh;
+}
+
+.log-in .column-40 .expert-esteem h4, .log-in .column-40 .auctive-coin h4 {
+    font-size: 26px;
+    color: #183153;
+    font-weight: 600;
+}
+
+.log-in .column-40 .expert-esteem p, .log-in .column-40 .auctive-coin p {
+    color: #183153;
+    margin-top: 1vh;
+    font-weight: 400;
+    font-size: 22px;
+}
+
+.log-in .column-60 {
+    position: relative;
+    display: flex;
+    width: 60%;
+    height: 100%;
+    float: left;
+    flex-direction: column;
+    align-items: center;
+
+}
+
+.log-in .column-60 form {
+    margin-top: 6vh;
+    width: 50%;
+}
+
+.log-in .column-60 form input {
+    width: 100%;
+    height: 40px;
+    border-radius: 16px;
+    outline: none;
+    border: 0;
+    box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px, rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+    padding: 10px;
+    font-family: inherit;
+    margin-bottom: 30px;
+}
+
+.log-in .column-60 form input:last-of-type {
+    margin-bottom: 20px;
+}
+
+
+.log-in .column-60 form a {
+    float: right;
+    color: rgba(0, 0, 0, 0.5);
+    text-decoration: none;
+}
+
+.log-in .column-60 form a:hover {
+    text-decoration: underline;
+    color: rgba(0, 0, 0, 0.7);
+}
+
+.log-in .column-60 button {
+    display: block;
+    padding: 20px 40px;
+    border-radius: 16px;
+    font-family: inherit;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 30px;
+    outline: none;
+    border: 0;
+    color: #183153;
+    font-weight: 600;
+    background-color: #FFD43B;
+    box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
+}
+
+.log-in .column-60_absolute {
+    width: 100%;
+    display: flex;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    flex-direction: column;
+    align-items: center;
+}
+
+.log-in .column-60 button:hover {
+    cursor: pointer;
+}
+
+.sign-in_button {
+    margin-top: 30px !important;
+}
+
+.log-in .alternative_log-in {
+    display: flex;
+    width: 50%;
+    justify-content: space-evenly;
+    margin-top: 4vh;
+}
+
+.log-in .alternative_log-in .option {
+    border: 1px solid #C7C7C7;
+    width: 80px;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    position: relative;
+    transition: .1s;
+}
+
+.log-in .alternative_log-in .option:hover {
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+}
+
+.log-in .alternative_log-in .option img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 44px;
+}
+
+.log-in .no-account {
+    margin-top: 6vh;
+    text-align: center;
+}
+
+.log-in .no-account h4 {
+    margin-bottom: 1vh;
+    font-size: 16px;
+}
+
+.log-in .no-account a {
+    color: #1E1E1E;
+    font-size: 15px;
+}
+
+
+.mobile_log-in {
+    display: none;
+}
+
+@media screen and (max-width: 1000px) {
+    
+    .log-in {
+        display: none;
+    }
+
+    .mobile_log-in {
+        display: flex;
+        width: 90%;
+        height: auto;
+        padding-bottom: 4vh;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 6vh;
+        flex-direction: column;
+        align-items: center;
+        background-color: #ffffff;
+        border-radius: 16px;
+        box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
+        }
+
+    .mobile_log-in_logo {
+        width: fit-content;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 3vh;
+    }
+
+    .mobile_log-in_logo img {
+        width: 80px;
+    }
+
+    .mobile_log-in_title {
+        margin-top: 2vh;
+    }
+
+    .mobile_log-in_title h3 {
+        text-align: center;
+        font-size: 24px;
+        color: #183153;
+    }
+
+    .mobile_log-in_form {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 78%;
+        margin-top: 3vh;
+    }
+
+    .mobile_log-in_form input {
+        color: #183153;
+        box-shadow: rgb(0 0 0 / 2%) 0px 1px 3px 0px, rgb(27 31 35 / 15%) 0px 0px 0px 1px, rgb(50 50 93 / 25%) 0px 2px 5px -1px, rgb(0 0 0 / 30%) 0px 1px 3px -1px;
+        outline: none;
+        border: 0;
+        border-radius: 16px;
+        width: 100%;
+        height: 36px;
+        padding: 10px;
+        margin-bottom: 40px;
+        max-width: 400px;
+    }
+    
+    .mobile_log-in_form input:last-of-type {
+        margin-bottom: 30px;
+    }
+
+    .mobile_log-in_button {
+        display: block;
+        padding: 16px 40px;
+        border-radius: 16px;
+        margin-left: auto;
+        margin-right: auto;
+        outline: none;
+        border: 0;
+        color: #183153;
+        font-weight: 600;
+        background-color: #FFD43B;
+        box-shadow: rgb(0 0 0 / 2%) 0px 1px 3px 0px, rgb(27 31 35 / 15%) 0px 0px 0px 1px;
+    }
+
+    .mobile-alternative_log-in {
+        display: flex;
+        flex-direction: row;
+        width: 80%;
+        justify-content: space-evenly;
+        margin-top: 3vh;
+    }
+    
+    .mobile-alternative_log-in_single-img {
+        position: relative;
+        height: 50px;
+        aspect-ratio: 1;
+        border-radius: 50%;
+        border: 1px solid #C7C7C7
+    }
+
+    .mobile-alternative_log-in_single-img img {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 34px;
+    }
+
+    .mobile_no-account {
+        display: flex;
+        flex-direction: column;
+        margin-top: 2.4vh;
+        text-align: center;
+        line-height: 20px;
+    }
+
+    .mobile_no-account a {
+        color: #1E1E1E;
+    }
+
+}
+
+
+
+
+
+
+
