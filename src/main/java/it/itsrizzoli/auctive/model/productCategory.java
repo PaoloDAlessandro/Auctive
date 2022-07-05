@@ -1,9 +1,6 @@
 package it.itsrizzoli.auctive.model;
 
 import javax.persistence.*;
-import javax.validation.constraints.NotNull;
-import java.util.HashSet;
-import java.util.Set;
 
 @Entity
 @Table(name = "product_category")
@@ -13,7 +10,6 @@ public class productCategory {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
 
-
     @ManyToOne
     @JoinColumn
     Product product;
@@ -22,9 +18,7 @@ public class productCategory {
     @JoinColumn
     Category category;
 
-
     public productCategory() {
-
     }
 
     public productCategory(int id, Product product, Category category) {
@@ -32,8 +26,6 @@ public class productCategory {
         this.product = product;
         this.category = category;
     }
-
-
 
     public int getId() {
         return id;

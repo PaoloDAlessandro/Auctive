@@ -40,9 +40,7 @@ public class Product {
     @OneToMany(mappedBy = "product", cascade = CascadeType.ALL)
     Set<productCategory> pc = new HashSet<>();
 
-
     public Product() {
-
     }
 
     public Product(int id, String name, String description, Integer quantity, String urlImage, String brand, Set<productUser> pu, Set<productCategory> pc) {

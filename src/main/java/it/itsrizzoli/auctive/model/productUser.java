@@ -1,9 +1,6 @@
 package it.itsrizzoli.auctive.model;
 
 import javax.persistence.*;
-import javax.validation.constraints.NotNull;
-import java.util.HashSet;
-import java.util.Set;
 
 @Entity
 @Table(name = "product_user")
@@ -22,7 +19,6 @@ public class productUser {
     Product product;
 
     public productUser() {
-
     }
 
     public productUser(int id, User user, Product product) {
@@ -30,8 +26,6 @@ public class productUser {
         this.user = user;
         this.product = product;
     }
-
-
 
     public int getId() {
         return id;

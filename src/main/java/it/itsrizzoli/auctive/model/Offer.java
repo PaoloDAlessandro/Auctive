@@ -2,8 +2,6 @@ package it.itsrizzoli.auctive.model;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
-import java.util.HashSet;
-import java.util.Set;
 
 @Entity
 @Table(name = "offer")
@@ -24,10 +22,7 @@ public class Offer {
     @JoinColumn
     Auction auction;
 
-
-
     public Offer() {
-
     }
 
     public Offer(int id, Double offerValue, User user, Auction auction) {
@@ -36,8 +31,6 @@ public class Offer {
         this.user = user;
         this.auction = auction;
     }
-
-
 
     public int getId() {
         return id;
