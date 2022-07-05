@@ -11,7 +11,7 @@ public class Auction {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private int id_auction;
+    private Integer id_auction;
 
     @NotNull(message = "price deve essere inserita")
     Double starter_price;
