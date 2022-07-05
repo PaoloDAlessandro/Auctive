@@ -6,28 +6,25 @@ import javax.validation.constraints.Size;
 import java.util.Date;
 
 @Entity
-@Table(name = "auction")
+@Table(name = "auctions")
 public class Auction {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private int id;
-
-    @NotNull(message = "idProduct deve essere inserito")
-    int idProduct;
+    private int id_auction;
 
     @NotNull(message = "price deve essere inserita")
-    Double price;
+    Double starter_price;
 
     @Size(min = 8, max = 500)
     @NotNull(message = "description deve essere inserita")
-    String description;
+    String auction_description;
 
     @NotNull(message = "sterterDate deve essere inserita")
-    Date starterDate;
+    Date starter_date;
 
     @NotNull(message = "endDate deve essere inserita")
-    Date endDate;
+    Date end_date;
 
     @OneToOne
     Product product;
@@ -35,62 +32,61 @@ public class Auction {
     public Auction() {
     }
 
-    public Auction(int id, int idProduct, Double price, String description, Date starterDate, Date endDate, Product product) {
-        this.id = id;
-        this.idProduct = idProduct;
-        this.price = price;
-        this.description = description;
-        this.starterDate = starterDate;
-        this.endDate = endDate;
+    public Auction(int id_auction, Double starter_price, String auction_description, Date starter_date, Date end_date, Product product) {
+        this.id_auction = id_auction;
+        this.starter_price = starter_price;
+        this.auction_description = auction_description;
+        this.starter_date = starter_date;
+        this.end_date = end_date;
         this.product = product;
     }
 
-    public int getId() {
-        return id;
+    public int getId_auction() {
+        return id_auction;
     }
 
-    public void setId(int id) {
-        this.id = id;
+    public void setId_auction(int id_auction) {
+        this.id_auction = id_auction;
     }
 
-    public int getIdProduct() {
-        return idProduct;
+    public Double getStarter_price() {
+        return starter_price;
     }
 
-    public void setIdProduct(int idProduct) {
-        this.idProduct = idProduct;
+    public void setStarter_price(Double starter_price) {
+        this.starter_price = starter_price;
     }
 
-    public Double getPrice() {
-        return price;
+    public String getAuction_description() {
+        return auction_description;
     }
 
-    public void setPrice(Double price) {
-        this.price = price;
+    public void setAuction_description(String auction_description) {
+        this.auction_description = auction_description;
     }
 
-    public String getDescription() {
-        return description;
+    public Date getStarter_date() {
+        return starter_date;
     }
 
-    public void setDescription(String description) {
-        this.description = description;
+    public void setStarter_date(Date starter_date) {
+        this.starter_date = starter_date;
     }
 
-    public Date getStarterDate() {
-        return starterDate;
+    public Date getEnd_date() {
+        return end_date;
     }
 
-    public void setStarterDate(Date starterDate) {
-        this.starterDate = starterDate;
+    public void setEnd_date(Date end_date) {
+        this.end_date = end_date;
     }
 
-    public Date getEndDate() {
-        return endDate;
+    public Product getProduct() {
+        return product;
     }
 
-    public void setEndDate(Date endDate) {
-        this.endDate = endDate;
+    public void setProduct(Product product) {
+        this.product = product;
     }
 
     public Product getProducts() {
@@ -104,14 +100,12 @@ public class Auction {
     @Override
     public String toString() {
         return "Auction{" +
-                "id=" + id +
-                ", idProduct=" + idProduct +
-                ", price=" + price +
-                ", description='" + description + '\'' +
-                ", starterDate=" + starterDate +
-                ", endDate=" + endDate +
+                "id_auction=" + id_auction +
+                ", starter_price=" + starter_price +
+                ", auction_description='" + auction_description + '\'' +
+                ", starter_date=" + starter_date +
+                ", end_date=" + end_date +
                 ", product=" + product +
                 '}';
     }
-
 }

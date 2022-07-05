@@ -9,20 +9,20 @@ import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
 @Entity
-@Table(name = "utente")
+@Table(name = "users")
 public class User {
     @Id
     @GeneratedValue(strategy=GenerationType.AUTO)
-    private int id;
+    private int id_user;
 
     @Size(min=2, max=50, message = "Nome deve esser tra 2 e 50 caratteri")
     @NotNull(message = "Nome deve esser inserito")
     //@Column(name="firstname")
-	String name;
+	String name_user;
     
     @Size(min=2, max=50, message = "Cognome deve esser tra 2 e 50 caratteri")
     @NotNull(message = "Cognome deve esser inserito")
-	String surname;
+	String surname_user;
 	
     @Size(min=4, max=319, message = "Email deve esser tra 5 e 25 caratteri")
     @Email(message = "Email inserita non valida")
@@ -35,20 +35,20 @@ public class User {
     
     @Size(min=6, max=25, message = "Password deve esser tra 6 e 25 caratteri")
     @NotNull(message = "Password deve esser inserito")
-	String password;
+	String pass;
 
 	@NotNull(message="Sex deve essere inserito")
 	Integer sex;
 
 	@NotNull(message="birthDate deve essere inserito")
-	Date birthDate;
+	Date birthdate;
 
 	@Size(min= 5, max=200)
 	@NotNull(message = "Address deve essere inserito")
 	String address;
 
 	@OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
-	Set<productUser> pu = new HashSet<>();
+	Set<ProductUser> pu = new HashSet<>();
 
 	@OneToMany(mappedBy = "user_card", cascade = CascadeType.ALL)
 	Set<Card> userCards = new HashSet<>();
@@ -56,42 +56,42 @@ public class User {
     //il costruttore di default è NECESSARIO
     public User() {}
 
-	public User(int id, String name, String surname, String username, String email, int sex, String password, Date birthDate, String address, Set<productUser> pu ,Set<Card> userCards) {
-		this.id = id;
-		this.name = name;
-		this.surname = surname;
+	public User(int id_user, String name_user, String surname_user, String username, String email, int sex, String pass, Date birthdate, String address, Set<ProductUser> pu , Set<Card> userCards) {
+		this.id_user = id_user;
+		this.name_user = name_user;
+		this.surname_user = surname_user;
 		this.username = username;
 		this.email = email;
 		this.sex = sex;
-		this.password = password;
-		this.birthDate = birthDate;
+		this.pass = pass;
+		this.birthdate = birthdate;
 		this.address = address;
 		this.pu = pu;
 		this.userCards = userCards;
 	}
 
-	public int getId() {
-		return id;
+	public int getId_user() {
+		return id_user;
 	}
 
-	public void setId(int id) {
-		this.id = id;
+	public void setId_user(int id_user) {
+		this.id_user = id_user;
 	}
 
-	public String getName() {
-		return name;
+	public String getName_user() {
+		return name_user;
 	}
 
-	public void setName(String name) {
-		this.name = name;
+	public void setName_user(String name_user) {
+		this.name_user = name_user;
 	}
 
-	public String getSurname() {
-		return surname;
+	public String getSurname_user() {
+		return surname_user;
 	}
 
-	public void setSurname(String surname) {
-		this.surname = surname;
+	public void setSurname_user(String surname_user) {
+		this.surname_user = surname_user;
 	}
 
 	public String getEmail() {
@@ -110,12 +110,12 @@ public class User {
 		this.username = username;
 	}
 
-	public String getPassword() {
-		return password;
+	public String getPass() {
+		return pass;
 	}
 
-	public void setPassword(String password) {
-		this.password = password;
+	public void setPass(String pass) {
+		this.pass = pass;
 	}
 
 	public int getSex() {
@@ -126,12 +126,12 @@ public class User {
 		this.sex = sex;
 	}
 
-	public Date getBirthDate() {
-		return birthDate;
+	public Date getBirthdate() {
+		return birthdate;
 	}
 
-	public void setBirthDate(Date birthDate) {
-		this.birthDate = birthDate;
+	public void setBirthdate(Date birthdate) {
+		this.birthdate = birthdate;
 	}
 
 	public String getAddress() {
@@ -142,11 +142,11 @@ public class User {
 		this.address = address;
 	}
 
-	public Set<productUser> getPu() {
+	public Set<ProductUser> getPu() {
 		return pu;
 	}
 
-	public void setPu(Set<productUser> pu) {
+	public void setPu(Set<ProductUser> pu) {
 		this.pu = pu;
 	}
 
@@ -161,14 +161,14 @@ public class User {
 	@Override
 	public String toString() {
 		return "User{" +
-				"id=" + id +
-				", name='" + name + '\'' +
-				", surname='" + surname + '\'' +
+				"id_user=" + id_user +
+				", name_user='" + name_user + '\'' +
+				", surname_user='" + surname_user + '\'' +
 				", email='" + email + '\'' +
 				", username='" + username + '\'' +
-				", password='" + password + '\'' +
+				", password='" + pass + '\'' +
 				", sex=" + sex +
-				", birthDate=" + birthDate +
+				", birthDate=" + birthdate +
 				", address='" + address + '\'' +
 				", pu=" + pu +
 				", userCards=" + userCards +

@@ -3,12 +3,12 @@ package it.itsrizzoli.auctive.model;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "product_category")
-public class productCategory {
+@Table(name = "product_categories")
+public class ProductCategory {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private int id;
+    private int id_product_category;
 
     @ManyToOne
     @JoinColumn
@@ -18,21 +18,21 @@ public class productCategory {
     @JoinColumn
     Category category;
 
-    public productCategory() {
+    public ProductCategory() {
     }
 
-    public productCategory(int id, Product product, Category category) {
-        this.id = id;
+    public ProductCategory(int id_product_category, Product product, Category category) {
+        this.id_product_category = id_product_category;
         this.product = product;
         this.category = category;
     }
 
-    public int getId() {
-        return id;
+    public int getId_product_category() {
+        return id_product_category;
     }
 
-    public void setId(int id) {
-        this.id = id;
+    public void setId_product_category(int id_product_category) {
+        this.id_product_category = id_product_category;
     }
 
     public Product getProduct() {
@@ -54,7 +54,7 @@ public class productCategory {
     @Override
     public String toString() {
         return "productCategory{" +
-                "id=" + id +
+                "id=" + id_product_category +
                 ", product=" + product +
                 ", category=" + category +
                 '}';

@@ -6,21 +6,21 @@ import javax.validation.constraints.Size;
 import java.sql.Date;
 
 @Entity
-@Table(name = "card")
+@Table(name = "cards")
 public class Card {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private int id;
+    private int id_card;
 
     @NotNull(message = "idUser deve essere inserito")
     int idUser;
 
     @Size(min = 15, max = 19)
     @NotNull(message = "cardNumver deve essere inserito")
-    Integer cardNumber;
+    Integer card_number;
 
     @NotNull(message = "expireDate deve essere inserito")
-    Date expiredate;
+    Date expire_date;
 
     @NotNull(message = "cvv deve essere inserito")
     @Size(min = 3, max = 3)
@@ -34,21 +34,21 @@ public class Card {
 
     }
 
-    public Card(int id, int idUser, Integer cardNumber, Date expiredate, String cvv, User user_card) {
-        this.id = id;
+    public Card(int id_card, int idUser, Integer card_number, Date expire_date, String cvv, User user_card) {
+        this.id_card = id_card;
         this.idUser = idUser;
-        this.cardNumber = cardNumber;
-        this.expiredate = expiredate;
+        this.card_number = card_number;
+        this.expire_date = expire_date;
         this.cvv = cvv;
         this.user_card = user_card;
     }
 
-    public int getId() {
-        return id;
+    public int getId_card() {
+        return id_card;
     }
 
-    public void setId(int id) {
-        this.id = id;
+    public void setId_card(int id_card) {
+        this.id_card = id_card;
     }
 
     public int getIdUser() {
@@ -59,20 +59,20 @@ public class Card {
         this.idUser = idUser;
     }
 
-    public Integer getCardNumber() {
-        return cardNumber;
+    public Integer getCard_number() {
+        return card_number;
     }
 
-    public void setCardNumber(Integer cardNumber) {
-        this.cardNumber = cardNumber;
+    public void setCard_number(Integer card_number) {
+        this.card_number = card_number;
     }
 
-    public Date getExpiredate() {
-        return expiredate;
+    public Date getExpire_date() {
+        return expire_date;
     }
 
-    public void setExpiredate(Date expiredate) {
-        this.expiredate = expiredate;
+    public void setExpire_date(Date expire_date) {
+        this.expire_date = expire_date;
     }
 
     public String getCvv() {
@@ -83,15 +83,23 @@ public class Card {
         this.cvv = cvv;
     }
 
+    public User getUser_card() {
+        return user_card;
+    }
+
+    public void setUser_card(User user_card) {
+        this.user_card = user_card;
+    }
+
     @Override
     public String toString() {
         return "Card{" +
-                "id=" + id +
+                "id_card=" + id_card +
                 ", idUser=" + idUser +
-                ", cardNumber=" + cardNumber +
-                ", expiredate=" + expiredate +
+                ", card_number=" + card_number +
+                ", expire_date=" + expire_date +
                 ", cvv='" + cvv + '\'' +
+                ", user_card=" + user_card +
                 '}';
     }
-
 }

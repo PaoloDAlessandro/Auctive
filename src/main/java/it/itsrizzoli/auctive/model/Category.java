@@ -1,63 +1,64 @@
 package it.itsrizzoli.auctive.model;
 
+
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import java.util.HashSet;
 import java.util.Set;
 
 @Entity
-@Table(name = "category")
+@Table(name = "categories")
 public class Category {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private int id;
+    private int id_category;
 
-    @NotNull(message = "name deve essere inserito")
-    String name;
+    @NotNull(message = "category_name deve essere inserito")
+    String category_name;
 
     @OneToMany(mappedBy = "category", cascade = CascadeType.ALL)
-    Set<productCategory> pc = new HashSet<>();
+    Set<ProductCategory> pc = new HashSet<>();
 
     public Category() {
 
     }
 
-    public Category(int id, String name, Set<productCategory> pc) {
-        this.id = id;
-        this.name = name;
+    public Category(int id_category, String category_name, Set<ProductCategory> pc) {
+        this.id_category = id_category;
+        this.category_name = category_name;
         this.pc = pc;
     }
 
-    public int getId() {
-        return id;
+    public int getid_category() {
+        return id_category;
     }
 
-    public void setId(int id) {
-        this.id = id;
+    public void setid_category(int id_category) {
+        this.id_category = id_category;
     }
 
-    public String getName() {
-        return name;
+    public String getCategory_name() {
+        return category_name;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setCategory_name(String category_name) {
+        this.category_name = category_name;
     }
 
-    public Set<productCategory> getPc() {
+    public Set<ProductCategory> getPc() {
         return pc;
     }
 
-    public void setPc(Set<productCategory> pc) {
+    public void setPc(Set<ProductCategory> pc) {
         this.pc = pc;
     }
 
     @Override
     public String toString() {
         return "Category{" +
-                "id=" + id +
-                ", name='" + name + '\'' +
+                "id_category=" + id_category +
+                ", category_name='" + category_name + '\'' +
                 ", pc=" + pc +
                 '}';
     }

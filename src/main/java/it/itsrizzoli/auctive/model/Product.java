@@ -1,93 +1,81 @@
 package it.itsrizzoli.auctive.model;
 
 import javax.persistence.*;
-import javax.validation.constraints.Max;
-import javax.validation.constraints.Min;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 import java.util.HashSet;
 import java.util.Set;
 
 @Entity
-@Table(name = "product")
+@Table(name = "products")
 public class Product {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private int id;
+    private int id_product;
 
     @Size(min = 2, max = 255)
     @NotNull
-    String name;
+    String product_name;
 
     @Size(max = 500)
-    String description;
-
-    @Min(1)
-    @Max(20)
-    @NotNull
-    Integer quantity;
+    String product_description;
 
     @Size(min = 7, max = 256)
     @NotNull
-    String urlImage;
+    String product_image_url;
 
     @Size(min = 1 ,max = 50)
     String brand;
 
     @OneToMany(mappedBy = "product", cascade = CascadeType.ALL)
-    Set<productUser> pu = new HashSet<>();
+    Set<ProductUser> pu = new HashSet<>();
 
     @OneToMany(mappedBy = "product", cascade = CascadeType.ALL)
-    Set<productCategory> pc = new HashSet<>();
+    Set<ProductCategory> pc = new HashSet<>();
 
     public Product() {
     }
 
-    public Product(int id, String name, String description, Integer quantity, String urlImage, String brand, Set<productUser> pu, Set<productCategory> pc) {
-        this.id = id;
-        this.name = name;
-        this.description = description;
-        this.quantity = quantity;
-        this.urlImage = urlImage;
+    public Product(int id_product, String product_name, String product_description, String product_image_url, String brand, Set<ProductUser> pu, Set<ProductCategory> pc) {
+        this.id_product = id_product;
+        this.product_name = product_name;
+        this.product_description = product_description;
+        this.product_image_url = product_image_url;
         this.brand = brand;
         this.pu = pu;
         this.pc = pc;
     }
 
-    public int getId() {
-        return id;
+    public int getId_product() {
+        return id_product;
     }
 
-    public void setId(int id) {
-        this.id = id;
+    public void setId_product(int id_product) {
+        this.id_product = id_product;
     }
 
-    public String getName() {
-        return name;
+    public String getProduct_name() {
+        return product_name;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setProduct_name(String product_name) {
+        this.product_name = product_name;
     }
 
-    public String getDescription() {
-        return description;
+    public String getProduct_description() {
+        return product_description;
     }
 
-    public void setDescription(String description) {
-        this.description = description;
+    public void setProduct_description(String product_description) {
+        this.product_description = product_description;
     }
 
-    public Integer getQuantity() {
-        return quantity;
+    public String getProduct_image_url() {
+        return product_image_url;
     }
 
-    public void setQuantity(Integer quantity) {
-        this.quantity = quantity;
-    }
-
-    public String getUrlImage() {
-        return urlImage;
+    public void setProduct_image_url(String product_image_url) {
+        this.product_image_url = product_image_url;
     }
 
     public String getBrand() {
@@ -98,34 +86,29 @@ public class Product {
         this.brand = brand;
     }
 
-    public void setUrlImage(String urlImage) {
-        this.urlImage = urlImage;
-    }
-
-    public Set<productUser> getPu() {
+    public Set<ProductUser> getPu() {
         return pu;
     }
 
-    public void setPu(Set<productUser> pu) {
+    public void setPu(Set<ProductUser> pu) {
         this.pu = pu;
     }
 
-    public Set<productCategory> getPc() {
+    public Set<ProductCategory> getPc() {
         return pc;
     }
 
-    public void setPc(Set<productCategory> pc) {
+    public void setPc(Set<ProductCategory> pc) {
         this.pc = pc;
     }
 
     @Override
     public String toString() {
         return "Product{" +
-                "id=" + id +
-                ", name='" + name + '\'' +
-                ", description='" + description + '\'' +
-                ", quantity=" + quantity +
-                ", urlImage='" + urlImage + '\'' +
+                "id_product=" + id_product +
+                ", product_name='" + product_name + '\'' +
+                ", product_description='" + product_description + '\'' +
+                ", product_image_url='" + product_image_url + '\'' +
                 ", brand='" + brand + '\'' +
                 ", pu=" + pu +
                 ", pc=" + pc +
