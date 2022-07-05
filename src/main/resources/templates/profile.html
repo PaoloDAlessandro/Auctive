@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/profilo.css"/>
+    <link rel="stylesheet" href="fonts/stylesheet.css"/>
+
+    <title>Document</title>
+</head>
+<body id="index-body">
+
+<section class="account-data-section" id="account-section">
+    <div class="your-profile">
+
+        <h1 class="page-title">Il tuo profilo</h1>
+
+        <img src="img/account/imageprofile.jpg" class="profile-image"/>
+
+        <h1 class="username">DeadHeadShot1357</h1>
+
+        <p class="data-name">Username:</p>
+        <input type="text" placeholder="DeadHeadShot1357" autocomplete="off" class="user-data-section">
+
+        <p class="name">Nome:</p>
+        <input type="text" placeholder="Marco" autocomplete="off" class="name-data-section">
+
+
+        <input type="text" placeholder="Stefani" autocomplete="off" class="surname-data-section">
+        <p class="surname">Cognome:</p>
+
+        <p class="e-mail">E-mail:</p>
+        <input type="text" placeholder="m.stefani@itsrizzoli.it" autocomplete="off" class="e-mail-data-section">
+
+        <p class="sessoM">M:</p>
+        <input type="radio" class="sessoM-data-section">
+
+        <p class="sessoF">F:</p>
+        <input type="radio" class="sessoF-data-section">
+
+        <p class="number">Telefono:</p>
+        <select placeholder="+39" class="suffisso">
+            <option>+39</option>
+            <option>+45</option>
+            <option>+29</option>
+            <option>+31</option>
+        </select>
+        <input type="text" placeholder="3664689658" autocomplete="off" class="number-data-section">
+
+        <input type="text" placeholder="19 anni" autocomplete="off" class="eta-data-section">
+        <p class="eta">Età:</p>
+
+        <div class="space"></div>
+
+
+    </div>
+</section>
+
+<section class="account-data-section" id="payment-section">
+
+    <h1 class="page-title">I tuoi metodi di pagamento</h1>
+
+    <div class="scroll-cards">
+        <div class="credit-card_div">
+
+            <img src="img/account/master.png" class="card-image"/>
+            <h2 class="card-number">**** **** **** **90</h2>
+            <h2 class="card-owner">Marco Stefani</h2>
+            <i class="fa-solid fa-trash-can"></i>
+
+        </div>
+
+        <div class="credit-card_div">
+
+            <img src="img/account/master.png" class="card-image"/>
+            <h2 class="card-number">**** **** **** **45</h2>
+            <h2 class="card-owner">Marco Stefani</h2>
+            <i class="fa-solid fa-trash-can"></i>
+
+        </div>
+
+        <div class="credit-card_div">
+
+            <img src="img/account/master.png" class="card-image"/>
+            <h2 class="card-number">**** **** **** **45</h2>
+            <h2 class="card-owner">Marco Stefani</h2>
+            <i class="fa-solid fa-trash-can"></i>
+
+        </div>
+
+        <div class="credit-card_div">
+
+            <img src="img/account/master.png" class="card-image"/>
+            <h2 class="card-number">**** **** **** **45</h2>
+            <h2 class="card-owner">Marco Stefani</h2>
+            <i class="fa-solid fa-trash-can"></i>
+
+        </div>
+    </div>
+
+    <div class="card-information-div" id="card-information-div">
+        <i class="fa-solid fa-x" id="close-tab"></i>
+        <input class="card-info-name" type="text" placeholder="Nome"/>
+        <input class="card-info-surname" type="text" placeholder="Cognome"/>
+        <input class="card-info-number" type="text" placeholder="Numero della carta"/>
+        <input class="card-info-expiring-date" type="text" placeholder="Data di scadenza"/>
+        <input class="card-info-cvv" type="text" placeholder="CVV"/>
+
+        <input class="card-info-add" type="button" value="Add card"/>
+    </div>
+
+    <div class="bottom-div">
+        <i class="fa-solid fa-circle-plus" id="add-card"></i>
+    </div>
+
+</section>
+
+<section class="account-data-section" id="record-section">
+
+    <h1 class="page-title">Record delle attività effettuate</h1>
+
+    <h1 class="div-title">Aste effettuate</h1>
+
+    <div class="record-effettuate">
+        <p class="aste-partecipate">Aste partecipate:</p>
+        <p class="aste-partecipate_number">0</p>
+
+        <p class="aste-vinte">Aste vinte:</p>
+        <p class="aste-vinte_number">0</p>
+
+        </br>
+        </br>
+
+        <p class="totale-offerte">Totale offerte:</p>
+        <p class="totale-offerte_number">0</p>
+
+        <p class="aste-perse">Aste perse:</p>
+        <p class="aste-perse_number">0</p>
+    </div>
+
+</section>
+
+<section class="account-data-section" id="prodotti-section">
+
+    <h1 class="page-title">I miei prodotti</h1>
+
+    <div class="prodotti-div">
+        <img src="img/account/nft.jpg" class="img-prodotto"/>
+
+        <div class="product-info-text">
+            <p class="nome_creatore">Nome creatore:</p>
+            <p class="nome_creatore">Nome prodotto:</p>
+            <p class="nome_creatore">Categoria prodotto:</p>
+            <p class="nome_creatore">Prezzo prodotto:</p>
+        </div>
+
+        <div class="product-info-data">
+            <p class="nome_creatore_data">Marco</p>
+            <p class="nome_creatore_data">Marco#1357</p>
+            <p class="nome_creatore_data">NFT</p>
+            <p class="nome_creatore_data">99.50€</p>
+        </div>
+
+
+    </div>
+
+    <div class="prodotti-div">
+        <img src="images/account/nft.jpg" class="img-prodotto"/>
+
+        <div class="product-info-text">
+            <p class="nome_creatore">Nome creatore:</p>
+            <p class="nome_creatore">Nome prodotto:</p>
+            <p class="nome_creatore">Categoria prodotto:</p>
+            <p class="nome_creatore">Prezzo prodotto:</p>
+        </div>
+
+        <div class="product-info-data">
+            <p class="nome_creatore_data">Marco</p>
+            <p class="nome_creatore_data">Marco#1357</p>
+            <p class="nome_creatore_data">NFT</p>
+            <p class="nome_creatore_data">99.50€</p>
+        </div>
+
+
+    </div>
+
+    <div class="prodotti-div">
+        <img src="img/account/nft.jpg" class="img-prodotto"/>
+
+        <div class="product-info-text">
+            <p class="nome_creatore">Nome creatore:</p>
+            <p class="nome_creatore">Nome prodotto:</p>
+            <p class="nome_creatore">Categoria prodotto:</p>
+            <p class="nome_creatore">Prezzo prodotto:</p>
+        </div>
+
+        <div class="product-info-data">
+            <p class="nome_creatore_data">Marco</p>
+            <p class="nome_creatore_data">Marco#1357</p>
+            <p class="nome_creatore_data">NFT</p>
+            <p class="nome_creatore_data">99.50€</p>
+        </div>
+
+
+    </div>
+
+    <div class="space"></div>
+
+    <div class="bottom-div">
+        <i class="fa-solid fa-circle-plus"></i>
+    </div>
+
+</section>
+
+<section class="chosing-section">
+    <img src="img/logo.png" class="logo-page"/>
+    <p class="logo-text">ccount</p>
+
+
+    <div class="chosing-div" id="clicked-profilo">
+        <p id="account-title">Il tuo account</p>
+    </div>
+
+    <div class="chosing-div" id="clicked-pagamento">
+        <p id="payment-title">I tuoi metodi di pagamento</p>
+    </div>
+
+    <div class="chosing-div" id="clicked-record">
+        <p id="record-title">Record delle attività effettuate</p>
+    </div>
+
+    <div class="chosing-div" id="clicked-prodotti">
+        <p id="products-title">I miei prodotti</p>
+    </div>
+</section>
+
+
+<script src="js/account.js"></script>
+<script src="https://kit.fontawesome.com/130673bc48.js" crossorigin="anonymous"></script>
+
+</body>
+</html>
