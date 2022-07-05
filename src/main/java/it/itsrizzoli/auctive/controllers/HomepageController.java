@@ -20,10 +20,10 @@ public class HomepageController {
     public String checkPersonInfo(@Valid Research research, BindingResult bindingResult) {
         if (bindingResult.hasErrors())
             return "homepage";
-        return "redirect:/results";
+        return "redirect:/research-results";
     }
 
-    @GetMapping("/results")
-    public String results() { return "results"; }
+    @GetMapping("/research-results")
+    public String results() { return "research-results"; }
 }
 
