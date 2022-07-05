@@ -4,10 +4,9 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 
 @Controller
-public class AccountController {
-    @GetMapping("/profile")
-    public String getProfile() {
-        return "profile";
+public class ProfileEditController {
+    @GetMapping("/profile-edit")
+    public String getProfileEdit() {
+        return "profile-edit";
     }
 }
-
