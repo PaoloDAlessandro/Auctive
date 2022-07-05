@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html xmlns:th="https://www.thymeleaf.org">
+<html>
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -68,19 +68,19 @@
                 <h1>Sign-in</h1>
             </div>
 
-            <form class="sign-up_form" action="#" th:action="@{/sign-ll}" th:object="${user}" method="post">
+            <form class="sign-up_form" action="#" method="post">
                 <div class="multiple-input">
-                    <input type="text" name="name" id="name" placeholder="Name" th:field="*{name}">
-                    <input type="text" name="surname" id="surname" placeholder="Surname" th:field="*{surname}">
+                    <input type="text" name="name" id="name" placeholder="Name">
+                    <input type="text" name="surname" id="surname" placeholder="Surname">
 
                 </div>
 
 
-                <input type="email" name="email" id="email" class="input_god" placeholder="Email" th:field="*{email}">
+                <input type="email" name="email" id="email" class="input_god" placeholder="Email">
 
                 <div class="multiple-input">
-                    <input type="text" name="username" id="username" placeholder="Username" th:field="*{username}">
-                    <input type="password" name="password" id="password" placeholder="Password" th:field="*{password}">
+                    <input type="text" name="username" id="username" placeholder="Username">
+                    <input type="password" name="password" id="password" placeholder="Password">
 
                 </div>
 
@@ -129,7 +129,7 @@
 
     <div class="mobile_no-account">
         <h4>Have an account?</h4>
-        <a href="../log-in/">log-in</a>
+        <a href="log-in/">log-in</a>
     </div>
 </section>
 
