@@ -5,15 +5,17 @@ import javax.validation.constraints.Max;
 import javax.validation.constraints.Min;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
+import java.util.HashSet;
+import java.util.Set;
 
 @Entity
-@Table(name = "products")
+@Table(name = "product")
 public class Product {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long id;
+    private int id;
 
-    @Size(min = 2, max = 80)
+    @Size(min = 2, max = 255)
     @NotNull
     String name;
 
@@ -25,26 +27,40 @@ public class Product {
     @NotNull
     Integer quantity;
 
+    @Size(min = 7, max = 256)
     @NotNull
-    Boolean status;
+    String urlImage;
 
-    public Product(Long id, String name, String description, Integer quantity, Boolean status) {
-        this.id = id;
-        this.name = name;
-        this.description = description;
-        this.quantity = quantity;
-        this.status = status;
-    }
+    @Size(min = 1 ,max = 50)
+    String brand;
+
+    @OneToMany(mappedBy = "product", cascade = CascadeType.ALL)
+    Set<productUser> pu = new HashSet<>();
+
+    @OneToMany(mappedBy = "product", cascade = CascadeType.ALL)
+    Set<productCategory> pc = new HashSet<>();
+
 
     public Product() {
 
     }
 
-    public Long getId() {
+    public Product(int id, String name, String description, Integer quantity, String urlImage, String brand, Set<productUser> pu, Set<productCategory> pc) {
+        this.id = id;
+        this.name = name;
+        this.description = description;
+        this.quantity = quantity;
+        this.urlImage = urlImage;
+        this.brand = brand;
+        this.pu = pu;
+        this.pc = pc;
+    }
+
+    public int getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(int id) {
         this.id = id;
     }
 
@@ -72,12 +88,36 @@ public class Product {
         this.quantity = quantity;
     }
 
-    public Boolean getStatus() {
-        return status;
+    public String getUrlImage() {
+        return urlImage;
     }
 
-    public void setStatus(Boolean status) {
-        this.status = status;
+    public String getBrand() {
+        return brand;
+    }
+
+    public void setBrand(String brand) {
+        this.brand = brand;
+    }
+
+    public void setUrlImage(String urlImage) {
+        this.urlImage = urlImage;
+    }
+
+    public Set<productUser> getPu() {
+        return pu;
+    }
+
+    public void setPu(Set<productUser> pu) {
+        this.pu = pu;
+    }
+
+    public Set<productCategory> getPc() {
+        return pc;
+    }
+
+    public void setPc(Set<productCategory> pc) {
+        this.pc = pc;
     }
 
     @Override
@@ -87,7 +127,10 @@ public class Product {
                 ", name='" + name + '\'' +
                 ", description='" + description + '\'' +
                 ", quantity=" + quantity +
-                ", status=" + status +
+                ", urlImage='" + urlImage + '\'' +
+                ", brand='" + brand + '\'' +
+                ", pu=" + pu +
+                ", pc=" + pc +
                 '}';
     }
 }

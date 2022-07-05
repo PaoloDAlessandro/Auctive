@@ -2,33 +2,38 @@ package it.itsrizzoli.auctive.model;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
+import java.util.HashSet;
+import java.util.Set;
 
 @Entity
-@Table(name = "categories")
+@Table(name = "category")
 public class Category {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long id;
+    private int id;
 
     @NotNull(message = "name deve essere inserito")
     String name;
 
-
-    public Category(Long id, String name) {
-        this.id = id;
-        this.name = name;
-    }
+    @OneToMany(mappedBy = "category", cascade = CascadeType.ALL)
+    Set<productCategory> pc = new HashSet<>();
 
     public Category() {
 
     }
 
-    public Long getId() {
+    public Category(int id, String name, Set<productCategory> pc) {
+        this.id = id;
+        this.name = name;
+        this.pc = pc;
+    }
+
+    public int getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(int id) {
         this.id = id;
     }
 
@@ -38,5 +43,22 @@ public class Category {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public Set<productCategory> getPc() {
+        return pc;
+    }
+
+    public void setPc(Set<productCategory> pc) {
+        this.pc = pc;
+    }
+
+    @Override
+    public String toString() {
+        return "Category{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", pc=" + pc +
+                '}';
     }
 }

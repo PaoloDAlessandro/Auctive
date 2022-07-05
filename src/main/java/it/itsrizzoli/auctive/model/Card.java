@@ -6,14 +6,14 @@ import javax.validation.constraints.Size;
 import java.sql.Date;
 
 @Entity
-@Table(name = "cards")
+@Table(name = "card")
 public class Card {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long id;
+    private int id;
 
     @NotNull(message = "idUser deve essere inserito")
-    Long idUser;
+    int idUser;
 
     @Size(min = 15, max = 19)
     @NotNull(message = "cardNumver deve essere inserito")
@@ -26,15 +26,72 @@ public class Card {
     @Size(min = 3, max = 3)
     String cvv;
 
-    public Card(Long id, Long idUser, Integer cardNumber, Date expiredate, String cvv) {
+    @ManyToOne
+    @JoinColumn
+    User user_card;
+
+    public Card() {
+
+    }
+
+    public Card(int id, int idUser, Integer cardNumber, Date expiredate, String cvv, User user_card) {
         this.id = id;
         this.idUser = idUser;
         this.cardNumber = cardNumber;
         this.expiredate = expiredate;
         this.cvv = cvv;
+        this.user_card = user_card;
     }
 
-    public Card() {
-
+    public int getId() {
+        return id;
     }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public int getIdUser() {
+        return idUser;
+    }
+
+    public void setIdUser(int idUser) {
+        this.idUser = idUser;
+    }
+
+    public Integer getCardNumber() {
+        return cardNumber;
+    }
+
+    public void setCardNumber(Integer cardNumber) {
+        this.cardNumber = cardNumber;
+    }
+
+    public Date getExpiredate() {
+        return expiredate;
+    }
+
+    public void setExpiredate(Date expiredate) {
+        this.expiredate = expiredate;
+    }
+
+    public String getCvv() {
+        return cvv;
+    }
+
+    public void setCvv(String cvv) {
+        this.cvv = cvv;
+    }
+
+    @Override
+    public String toString() {
+        return "Card{" +
+                "id=" + id +
+                ", idUser=" + idUser +
+                ", cardNumber=" + cardNumber +
+                ", expiredate=" + expiredate +
+                ", cvv='" + cvv + '\'' +
+                '}';
+    }
+
 }

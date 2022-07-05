@@ -9,18 +9,18 @@ import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
 @Entity
-@Table(name = "users")
+@Table(name = "utente")
 public class User {
     @Id
     @GeneratedValue(strategy=GenerationType.AUTO)
-    private Long id;
+    private int id;
 
-    @Size(min=2, max=22, message = "Nome deve esser tra 2 e 22 caratteri")
+    @Size(min=2, max=50, message = "Nome deve esser tra 2 e 50 caratteri")
     @NotNull(message = "Nome deve esser inserito")
     //@Column(name="firstname")
 	String name;
     
-    @Size(min=2, max=22, message = "Cognome deve esser tra 4 e 15 caratteri")
+    @Size(min=2, max=50, message = "Cognome deve esser tra 2 e 50 caratteri")
     @NotNull(message = "Cognome deve esser inserito")
 	String surname;
 	
@@ -29,7 +29,7 @@ public class User {
     @NotNull(message = "Email deve esser inserito")
 	String email;
 	
-    @Size(min=4, max=10, message = "Username deve esser tra 4 e 10 caratteri")
+    @Size(min=4, max=100, message = "Username deve esser tra 4 e 100 caratteri")
     @NotNull(message = "Username deve esser inserito")
 	String username;
     
@@ -46,22 +46,17 @@ public class User {
 	@Size(min= 5, max=200)
 	@NotNull(message = "Address deve essere inserito")
 	String address;
-    //@NotNull
-    //@Min(value = 18, message = "Sito per solo adulti")
-    //Integer age;
 
-	@ManyToMany
+	@OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
+	Set<productUser> pu = new HashSet<>();
+
+	@OneToMany(mappedBy = "user_card", cascade = CascadeType.ALL)
 	Set<Card> userCards = new HashSet<>();
 
     //il costruttore di default è NECESSARIO
     public User() {}
 
-	public User(String username, String password) {
-		this.username = username;
-		this.password = password;
-	}
-
-	public User(Long id, String name, String surname, String username, String email, int sex, String password, Date birthDate, String address) {
+	public User(int id, String name, String surname, String username, String email, int sex, String password, Date birthDate, String address, Set<productUser> pu ,Set<Card> userCards) {
 		this.id = id;
 		this.name = name;
 		this.surname = surname;
@@ -71,13 +66,15 @@ public class User {
 		this.password = password;
 		this.birthDate = birthDate;
 		this.address = address;
+		this.pu = pu;
+		this.userCards = userCards;
 	}
 
-	public Long getId() {
+	public int getId() {
 		return id;
 	}
 
-	public void setId(Long id) {
+	public void setId(int id) {
 		this.id = id;
 	}
 
@@ -145,6 +142,22 @@ public class User {
 		this.address = address;
 	}
 
+	public Set<productUser> getPu() {
+		return pu;
+	}
+
+	public void setPu(Set<productUser> pu) {
+		this.pu = pu;
+	}
+
+	public Set<Card> getUserCards() {
+		return userCards;
+	}
+
+	public void setUserCards(Set<Card> userCards) {
+		this.userCards = userCards;
+	}
+
 	@Override
 	public String toString() {
 		return "User{" +
@@ -157,6 +170,9 @@ public class User {
 				", sex=" + sex +
 				", birthDate=" + birthDate +
 				", address='" + address + '\'' +
+				", pu=" + pu +
+				", userCards=" + userCards +
 				'}';
 	}
+
 }
