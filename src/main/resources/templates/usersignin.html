@@ -1,0 +1,27 @@
+<html lang="en"> 
+    <head>  
+        <title>Login utente</title>  
+    </head>  
+	<body>
+		<h1>Login utente</h1><br>
+ 
+        <form action="signin" method="post">  
+            <table>  
+                <tr>  
+                    <td><label for="email">User name</label></td>  
+                    <td><input type="text" name="username"></input></td>  
+                </tr>  
+                <tr>  
+                    <td><label for="email">Password</label></td>  
+                    <td><input type="text" name="password"></input></td>  
+                </tr>  
+                <tr>  
+                    <td></td>  
+                    <td><input type="submit" value="Submit"></input></td>  
+                </tr>  
+            </table><br>
+            Non hai l'account? <a href="/user/signup">Registrati</a>
+            Lista utenti <a href="/user/list">Lista</a>
+        </form>  
+	</body>
+</html>

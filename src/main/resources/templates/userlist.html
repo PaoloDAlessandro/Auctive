@@ -1,0 +1,21 @@
+<html xmlns:th="https://thymeleaf.org">
+    <head>  
+        <title>Lista utenti</title>  
+    </head>  
+	<body>
+		<div th:replace="fragments/header :: header"></div>
+	
+		<h1>Lista utenti</h1><br>
+		<table>
+   			<th:block th:each="user : ${users}">
+	      		<tr>
+	         		<td th:text="${user.nome}"></td>
+	         		<td th:text="${user.email}"></td>
+	         		<td><a th:href="@{'detail/' + ${user.getId()}}">Dettaglio</a></td>
+	         		<td><a th:href="@{'edit/' + ${user.getId()}}">Modifica</a></td>
+	         		<td><a th:href="@{'remove/' + ${user.getId()}}">Rimuovi</a></td>
+	      		</tr>
+   			</th:block>
+		</table> 
+	</body>
+</html>
