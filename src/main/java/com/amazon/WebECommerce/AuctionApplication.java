@@ -11,15 +11,16 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
 public class AuctionApplication implements CommandLineRunner {
+	/*
 	@Autowired
-    private UserDao userRepository;
+    //private UserDao userRepository;
 
 	@Autowired
 	private ProductDao productRepository;
     
 	@Autowired
 	private CartDao cartRepository;
-
+	*/
 	
 	public static void main(String[] args) {
 		SpringApplication.run(AuctionApplication.class, args);

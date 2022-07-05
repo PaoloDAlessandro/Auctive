@@ -1,3 +1,5 @@
+/*
+
 package com.amazon.WebECommerce.controller;
 
 import javax.servlet.http.HttpSession;
@@ -49,7 +51,7 @@ public class UserController {
         modelAndView.setViewName("userlist");      
         modelAndView.addObject("users", userRepository.findAll());
 
-        return modelAndView; */ 
+        return modelAndView;
     } 
     
 	@RequestMapping("/login")
@@ -144,3 +146,4 @@ public class UserController {
 	}
 	
 }
+ */
