@@ -11,18 +11,18 @@ import java.util.Set;
 public class Product {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private int id_product;
+    private Integer idProduct;
 
     @Size(min = 2, max = 255)
     @NotNull
-    String product_name;
+    String productName;
 
     @Size(max = 500)
-    String product_description;
+    String productDescription;
 
     @Size(min = 7, max = 256)
     @NotNull
-    String product_image_url;
+    String productImageUrl;
 
     @Size(min = 1 ,max = 50)
     String brand;
@@ -36,46 +36,46 @@ public class Product {
     public Product() {
     }
 
-    public Product(int id_product, String product_name, String product_description, String product_image_url, String brand, Set<ProductUser> pu, Set<ProductCategory> pc) {
-        this.id_product = id_product;
-        this.product_name = product_name;
-        this.product_description = product_description;
-        this.product_image_url = product_image_url;
+    public Product(Integer idProduct, String productName, String productDescription, String productImageUrl, String brand, Set<ProductUser> pu, Set<ProductCategory> pc) {
+        this.idProduct = idProduct;
+        this.productName = productName;
+        this.productDescription = productDescription;
+        this.productImageUrl = productImageUrl;
         this.brand = brand;
         this.pu = pu;
         this.pc = pc;
     }
 
-    public int getId_product() {
-        return id_product;
+    public Integer getIdProduct() {
+        return idProduct;
     }
 
-    public void setId_product(int id_product) {
-        this.id_product = id_product;
+    public void setIdProduct(Integer idProduct) {
+        this.idProduct = idProduct;
     }
 
-    public String getProduct_name() {
-        return product_name;
+    public String getProductName() {
+        return productName;
     }
 
-    public void setProduct_name(String product_name) {
-        this.product_name = product_name;
+    public void setProductName(String productName) {
+        this.productName = productName;
     }
 
-    public String getProduct_description() {
-        return product_description;
+    public String getProductDescription() {
+        return productDescription;
     }
 
-    public void setProduct_description(String product_description) {
-        this.product_description = product_description;
+    public void setProductDescription(String productDescription) {
+        this.productDescription = productDescription;
     }
 
-    public String getProduct_image_url() {
-        return product_image_url;
+    public String getProductImageUrl() {
+        return productImageUrl;
     }
 
-    public void setProduct_image_url(String product_image_url) {
-        this.product_image_url = product_image_url;
+    public void setProductImageUrl(String productImageUrl) {
+        this.productImageUrl = productImageUrl;
     }
 
     public String getBrand() {
@@ -105,10 +105,10 @@ public class Product {
     @Override
     public String toString() {
         return "Product{" +
-                "id_product=" + id_product +
-                ", product_name='" + product_name + '\'' +
-                ", product_description='" + product_description + '\'' +
-                ", product_image_url='" + product_image_url + '\'' +
+                "idProduct=" + idProduct +
+                ", productName='" + productName + '\'' +
+                ", productDescription='" + productDescription + '\'' +
+                ", productImageUrl='" + productImageUrl + '\'' +
                 ", brand='" + brand + '\'' +
                 ", pu=" + pu +
                 ", pc=" + pc +

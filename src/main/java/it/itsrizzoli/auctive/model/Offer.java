@@ -9,10 +9,10 @@ public class Offer {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private int id_offer;
+    private Integer idOffer;
 
     @NotNull(message = "offerValue deve essere inserito")
-    Double offer_value;
+    Double offerValue;
 
     @ManyToOne
     @JoinColumn
@@ -25,27 +25,27 @@ public class Offer {
     public Offer() {
     }
 
-    public Offer(int id_offer, Double offer_value, User user, Auction auction) {
-        this.id_offer = id_offer;
-        this.offer_value = offer_value;
+    public Offer(Integer idOffer, Double offerValue, User user, Auction auction) {
+        this.idOffer = idOffer;
+        this.offerValue = offerValue;
         this.user = user;
         this.auction = auction;
     }
 
-    public int getId_offer() {
-        return id_offer;
+    public Integer getIdOffer() {
+        return idOffer;
     }
 
-    public void setId_offer(int id_offer) {
-        this.id_offer = id_offer;
+    public void setIdOffer(Integer idOffer) {
+        this.idOffer = idOffer;
     }
 
-    public Double getOffer_value() {
-        return offer_value;
+    public Double getOfferValue() {
+        return offerValue;
     }
 
-    public void setOffer_value(Double offer_value) {
-        this.offer_value = offer_value;
+    public void setOfferValue(Double offerValue) {
+        this.offerValue = offerValue;
     }
 
     public User getUser() {
@@ -67,8 +67,8 @@ public class Offer {
     @Override
     public String toString() {
         return "Offer{" +
-                "id=" + id_offer +
-                ", offerValue=" + offer_value +
+                "idOffer=" + idOffer +
+                ", offerValue=" + offerValue +
                 ", user=" + user +
                 ", auction=" + auction +
                 '}';

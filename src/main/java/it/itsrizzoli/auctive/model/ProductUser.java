@@ -9,7 +9,7 @@ public class ProductUser {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private int id_user_product;
+    private Integer idUserProduct;
 
     @NotNull
     private int quantity;
@@ -18,6 +18,7 @@ public class ProductUser {
     @JoinColumn
     User user;
 
+
     @ManyToOne
     @JoinColumn
     Product product;
@@ -25,19 +26,19 @@ public class ProductUser {
     public ProductUser() {
     }
 
-    public ProductUser(int id_user_product, int quantity, User user, Product product) {
-        this.id_user_product = id_user_product;
+    public ProductUser(Integer idUserProduct, int quantity, User user, Product product) {
+        this.idUserProduct = idUserProduct;
         this.quantity = quantity;
         this.user = user;
         this.product = product;
     }
 
-    public int getId_user_product() {
-        return id_user_product;
+    public Integer getIdUserProduct() {
+        return idUserProduct;
     }
 
-    public void setId_user_product(int id_user_product) {
-        this.id_user_product = id_user_product;
+    public void setIdUserProduct(Integer idUserProduct) {
+        this.idUserProduct = idUserProduct;
     }
 
     public int getQuantity() {
@@ -67,11 +68,10 @@ public class ProductUser {
     @Override
     public String toString() {
         return "ProductUser{" +
-                "id_user_product=" + id_user_product +
+                "idUserProduct=" + idUserProduct +
                 ", quantity=" + quantity +
                 ", user=" + user +
                 ", product=" + product +
                 '}';
     }
-
 }
