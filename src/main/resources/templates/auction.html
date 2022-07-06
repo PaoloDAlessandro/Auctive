@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <table>
+        <th:block th:each="auction : ${listauction}">
+            <tr>
+                <td th:text="${auction.product.product_image_url}"></td>
+            </tr>\
+    </table>
+</body>
+</html>
