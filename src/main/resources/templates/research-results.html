@@ -5,10 +5,30 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 </head>
 <body>
-<form action="#" th:action="@{/}" th:object="${research}" method="post">
 
     <h1>RISULTATI RICERCA</h1>
 
-</form>
+    <br>
+    <br>
+
+    <table border="1">
+        <thead>
+            <th>Prdocuct ID</th>
+            <th>Product Name</th>
+            <th>Product Description</th>
+            <th>Product Image Url</th>
+            <th>Brand</th>
+        </thead>
+        <tbody>
+            <tr th:each="product : ${listProducts}">
+                <td th:text="${product.id_product}">Product ID</td>
+                <td th:text="${product.product_name}">Name</td>
+                <td th:text="${product.product_description}">Description</td>
+                <td th:text="${product.product_image_url}">Image</td>
+                <td th:text="${product.brand}">Brand</td>
+            </tr>
+        </tbody>
+    </table>
+
 </body>
 </html>

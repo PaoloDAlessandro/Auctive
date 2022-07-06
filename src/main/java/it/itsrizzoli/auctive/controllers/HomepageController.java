@@ -11,7 +11,7 @@ import javax.validation.Valid;
 @Controller
 public class HomepageController {
 
-    @GetMapping("/home")
+    @GetMapping("/")
     public String getHomepage() {
         return "homepage";
     }
@@ -22,8 +22,8 @@ public class HomepageController {
             return "homepage";
         return "redirect:/research-results";
     }
-
+/*
     @GetMapping("/research-results")
-    public String results() { return "research-results"; }
+    public String results() { return "research-results"; } */
 }
 
