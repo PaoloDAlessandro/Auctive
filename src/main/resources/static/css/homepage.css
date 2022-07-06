@@ -1,0 +1,16 @@
+
+h1{
+    margin: 2em;
+    text-align: center;
+    font-size: 4em;
+}
+
+input {
+    display: block;
+    margin: auto;
+    margin-top: 2em;
+    text-align: center;
+    width: 40em;
+    height: 3em;
+    border-radius: 25em;
+}
