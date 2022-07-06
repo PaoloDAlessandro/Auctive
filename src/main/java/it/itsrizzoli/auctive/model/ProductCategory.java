@@ -8,7 +8,7 @@ public class ProductCategory {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private int id_product_category;
+    private Integer idProductCategory;
 
     @ManyToOne
     @JoinColumn
@@ -21,18 +21,18 @@ public class ProductCategory {
     public ProductCategory() {
     }
 
-    public ProductCategory(int id_product_category, Product product, Category category) {
-        this.id_product_category = id_product_category;
+    public ProductCategory(Integer idProductCategory, Product product, Category category) {
+        this.idProductCategory = idProductCategory;
         this.product = product;
         this.category = category;
     }
 
-    public int getId_product_category() {
-        return id_product_category;
+    public Integer getIdProductCategory() {
+        return idProductCategory;
     }
 
-    public void setId_product_category(int id_product_category) {
-        this.id_product_category = id_product_category;
+    public void setIdProductCategory(Integer idProductCategory) {
+        this.idProductCategory = idProductCategory;
     }
 
     public Product getProduct() {
@@ -53,11 +53,10 @@ public class ProductCategory {
 
     @Override
     public String toString() {
-        return "productCategory{" +
-                "id=" + id_product_category +
+        return "ProductCategory{" +
+                "idProductCategory=" + idProductCategory +
                 ", product=" + product +
                 ", category=" + category +
                 '}';
     }
-
 }

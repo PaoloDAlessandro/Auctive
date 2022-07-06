@@ -12,10 +12,10 @@ public class Category {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private int id_category;
+    private Integer idCategory;
 
     @NotNull(message = "category_name deve essere inserito")
-    String category_name;
+    String categoryName;
 
     @OneToMany(mappedBy = "category", cascade = CascadeType.ALL)
     Set<ProductCategory> pc = new HashSet<>();
@@ -24,26 +24,26 @@ public class Category {
 
     }
 
-    public Category(int id_category, String category_name, Set<ProductCategory> pc) {
-        this.id_category = id_category;
-        this.category_name = category_name;
+    public Category(Integer idCategory, String categoryName, Set<ProductCategory> pc) {
+        this.idCategory = idCategory;
+        this.categoryName = categoryName;
         this.pc = pc;
     }
 
-    public int getid_category() {
-        return id_category;
+    public Integer getIdCategory() {
+        return idCategory;
     }
 
-    public void setid_category(int id_category) {
-        this.id_category = id_category;
+    public void setIdCategory(Integer idCategory) {
+        this.idCategory = idCategory;
     }
 
-    public String getCategory_name() {
-        return category_name;
+    public String getCategoryName() {
+        return categoryName;
     }
 
-    public void setCategory_name(String category_name) {
-        this.category_name = category_name;
+    public void setCategoryName(String categoryName) {
+        this.categoryName = categoryName;
     }
 
     public Set<ProductCategory> getPc() {
@@ -57,8 +57,8 @@ public class Category {
     @Override
     public String toString() {
         return "Category{" +
-                "id_category=" + id_category +
-                ", category_name='" + category_name + '\'' +
+                "idCategory=" + idCategory +
+                ", categoryName='" + categoryName + '\'' +
                 ", pc=" + pc +
                 '}';
     }

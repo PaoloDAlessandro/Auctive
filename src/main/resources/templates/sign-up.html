@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html>
+<html xmlns:th="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <link rel="stylesheet" href="/fonts/stylesheet.css">
+    <!--link rel="stylesheet" href="/fonts/stylesheet.css">
     <link rel="stylesheet" href="/css/log-in.css">
     <link rel="stylesheet" href="/css/sing-up.css">
-    <link rel="stylesheet" href="/css/main.css">
+    <link rel="stylesheet" href="/css/main.css"-->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://kit.fontawesome.com/9d05a115fd.js" crossorigin="anonymous"></script>
     <title>Auctive</title>
@@ -111,14 +111,26 @@
         <h3>Sign-up</h3>
     </div>
 
-    <form action="api/sign-in" class="mobile_log-in_form">
-        <input type="text" name="name_mobile" id="name_mobile" placeholder="Name">
-        <input type="text" name="surname_mobile" id="surname_mobile" placeholder="Surname">
-        <input type="email" name="email_mobile" id="email_mobile" placeholder="Email">
-        <input type="text" name="username_mobile" id="username_mobile" placeholder="Username">
-        <input type="password" name="password_mobile" id="password_mobile" placeholder="Password">
-        <input type="password" name="confirm_password_mobile" id="confirm_password_mobile" placeholder="Confirm password">
-        <button type="button" id="mobile_sign-in_next">Next</button>
+    <form th:action="@{/sign-up}" th:object="${user}" method="post" class="mobile_log-in_form">
+        <input type="text"  th:field="*{name_user}" id="name_mobile" placeholder="Name">
+        <label th:if="${#fields.hasErrors('name_user')}" th:errors="*{name_user}" />
+        <input type="text" th:field="*{surname_user}" id="surname_mobile" placeholder="Surname">
+        <label th:if="${#fields.hasErrors('surname_user')}" th:errors="*{surname_user}" />
+        <input type="email" th:field="*{email}" id="email_mobile" placeholder="Email">
+        <label th:if="${#fields.hasErrors('email')}" th:errors="*{email}" />
+        <input type="text" th:field="*{username}" id="username_mobile" placeholder="Username">
+        <label th:if="${#fields.hasErrors('username')}" th:errors="*{username}" />
+        <input type="password" th:field="*{pass}" id="password_mobile" placeholder="Password">
+        <label th:if="${#fields.hasErrors('pass')}" th:errors="*{pass}" />
+        <input type="password" th:field="*{conferma_pass}" id="confirm_password_mobile" placeholder="Confirm password">
+        <label th:if="${#fields.hasErrors('conferma_pass')}" th:errors="*{conferma_pass}" />
+        <!--input type="date" th:field="*{birthdate}" placeholder="Date">
+        <label th:if="${#fields.hasErrors('birthdate')}" th:errors="*{birthdate}" /-->
+        <input type="text" th:field="*{sex}" placeholder="Sex">
+        <label th:if="${#fields.hasErrors('sex')}" th:errors="*{sex}" />
+        <input type="text" th:field="*{address}" placeholder="Address">
+        <label th:if="${#fields.hasErrors('address')}" th:errors="*{address}" />
+        <input type="submit" id="mobile_sign-in_next" value="Next" />
     </form>
 
     <div class="mobile-alternative_log-in">
@@ -133,7 +145,7 @@
     </div>
 </section>
 
-<script src="/js/sign-up.js"></script>
+<!--script src="/js/sign-up.js"></script--->
 <script src="/js/index.js"></script>
 
 </body>

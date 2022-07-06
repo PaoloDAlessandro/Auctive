@@ -11,20 +11,20 @@ public class Auction {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private int id_auction;
+    private Integer idAuction;
 
     @NotNull(message = "price deve essere inserita")
-    Double starter_price;
+    Double starterPrice;
 
     @Size(min = 8, max = 500)
     @NotNull(message = "description deve essere inserita")
-    String auction_description;
+    String auctionDescription;
 
     @NotNull(message = "sterterDate deve essere inserita")
-    Date starter_date;
+    Date starterDate;
 
     @NotNull(message = "endDate deve essere inserita")
-    Date end_date;
+    Date endDate;
 
     @OneToOne
     Product product;
@@ -32,53 +32,53 @@ public class Auction {
     public Auction() {
     }
 
-    public Auction(int id_auction, Double starter_price, String auction_description, Date starter_date, Date end_date, Product product) {
-        this.id_auction = id_auction;
-        this.starter_price = starter_price;
-        this.auction_description = auction_description;
-        this.starter_date = starter_date;
-        this.end_date = end_date;
+    public Auction(Integer idAuction, Double starterPrice, String auctionDescription, Date starterDate, Date endDate, Product product) {
+        this.idAuction = idAuction;
+        this.starterPrice = starterPrice;
+        this.auctionDescription = auctionDescription;
+        this.starterDate = starterDate;
+        this.endDate = endDate;
         this.product = product;
     }
 
-    public int getId_auction() {
-        return id_auction;
+    public Integer getIdAuction() {
+        return idAuction;
     }
 
-    public void setId_auction(int id_auction) {
-        this.id_auction = id_auction;
+    public void setIdAuction(Integer idAuction) {
+        this.idAuction = idAuction;
     }
 
-    public Double getStarter_price() {
-        return starter_price;
+    public Double getStarterPrice() {
+        return starterPrice;
     }
 
-    public void setStarter_price(Double starter_price) {
-        this.starter_price = starter_price;
+    public void setStarterPrice(Double starterPrice) {
+        this.starterPrice = starterPrice;
     }
 
-    public String getAuction_description() {
-        return auction_description;
+    public String getAuctionDescription() {
+        return auctionDescription;
     }
 
-    public void setAuction_description(String auction_description) {
-        this.auction_description = auction_description;
+    public void setAuctionDescription(String auctionDescription) {
+        this.auctionDescription = auctionDescription;
     }
 
-    public Date getStarter_date() {
-        return starter_date;
+    public Date getStarterDate() {
+        return starterDate;
     }
 
-    public void setStarter_date(Date starter_date) {
-        this.starter_date = starter_date;
+    public void setStarterDate(Date starterDate) {
+        this.starterDate = starterDate;
     }
 
-    public Date getEnd_date() {
-        return end_date;
+    public Date getEndDate() {
+        return endDate;
     }
 
-    public void setEnd_date(Date end_date) {
-        this.end_date = end_date;
+    public void setEndDate(Date endDate) {
+        this.endDate = endDate;
     }
 
     public Product getProduct() {
@@ -89,22 +89,14 @@ public class Auction {
         this.product = product;
     }
 
-    public Product getProducts() {
-        return product;
-    }
-
-    public void setProducts(Product product) {
-        this.product = product;
-    }
-
     @Override
     public String toString() {
         return "Auction{" +
-                "id_auction=" + id_auction +
-                ", starter_price=" + starter_price +
-                ", auction_description='" + auction_description + '\'' +
-                ", starter_date=" + starter_date +
-                ", end_date=" + end_date +
+                "idAuction=" + idAuction +
+                ", starterPrice=" + starterPrice +
+                ", auctionDescription='" + auctionDescription + '\'' +
+                ", starterDate=" + starterDate +
+                ", endDate=" + endDate +
                 ", product=" + product +
                 '}';
     }
