@@ -11,24 +11,36 @@
     <br>
     <br>
 
-    <table border="1">
-        <thead>
+    <div align="center">
+        <h1>Product Manager</h1>
+        <a href="new">Create New Product</a>
+        </br></br>
+        <table border="1" cellpadding="10">
+            <thead>
             <th>Prdocuct ID</th>
             <th>Product Name</th>
             <th>Product Description</th>
             <th>Product Image Url</th>
             <th>Brand</th>
-        </thead>
-        <tbody>
+            <th>Options</th>
+            </thead>
+            <tbody>
             <tr th:each="product : ${listProducts}">
-                <td th:text="${product.id_product}">Product ID</td>
-                <td th:text="${product.product_name}">Name</td>
-                <td th:text="${product.product_description}">Description</td>
-                <td th:text="${product.product_image_url}">Image</td>
+                <td th:text="${product.idProduct}">Product ID</td>
+                <td th:text="${product.productName}">Name</td>
+                <td th:text="${product.productDescription}">Description</td>
+                <td th:text="${product.productImageUrl}">Image</td>
                 <td th:text="${product.brand}">Brand</td>
+                <td>
+                    <a th:href="@{'/edit/' + ${product.idProduct}}">Edit</a>
+                    &nbsp;&nbsp;&nbsp;&nbsp;
+                    <a th:href="@{'/delete/' + ${product.idProduct}}">Delete</a>
+                </td>
             </tr>
-        </tbody>
-    </table>
+            </tbody>
+        </table>
+    </div>
+
 
 </body>
 </html>
