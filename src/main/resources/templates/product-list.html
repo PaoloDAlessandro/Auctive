@@ -3,6 +3,7 @@
 <head>
     <title>Auctive</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="/css/product-list.css">
 </head>
 <body>
 
@@ -29,7 +30,7 @@
                 <td th:text="${product.idProduct}">Product ID</td>
                 <td th:text="${product.productName}">Name</td>
                 <td th:text="${product.productDescription}">Description</td>
-                <td th:text="${product.productImageUrl}">Image</td>
+                <td th:text="${product.getproductImageUrl()}">Image</td>
                 <td th:text="${product.brand}">Brand</td>
                 <td>
                     <a th:href="@{'/edit/' + ${product.idProduct}}">Edit</a>
@@ -41,6 +42,9 @@
         </table>
     </div>
 
+    <div class="home-link">
+        <a href="/">Torna alla Home</a>
+    </div>
 
 </body>
 </html>

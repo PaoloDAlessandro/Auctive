@@ -33,7 +33,7 @@ public class LogIn_SignUpController {
 
         userRepository.save(user);
 
-        sessione.setAttribute("utenteloggato", user);
+        sessione.setAttribute("userLogged", user);
         return "redirect:/homepage";
     }
 

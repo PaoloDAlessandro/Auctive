@@ -70,11 +70,11 @@ public class Product {
         this.productDescription = productDescription;
     }
 
-    public String getProductImageUrl() {
+    public String getproductImageUrl() {
         return productImageUrl;
     }
 
-    public void setProductImageUrl(String productImageUrl) {
+    public void setproductImageUrl(String productImageUrl) {
         this.productImageUrl = productImageUrl;
     }
 

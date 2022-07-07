@@ -9,7 +9,7 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class AuctionApplication implements CommandLineRunner {
+public class AuctionApplication  {
 	@Autowired
 	UserRepository userRepository;
 
@@ -17,7 +17,6 @@ public class AuctionApplication implements CommandLineRunner {
 		SpringApplication.run(AuctionApplication.class, args);
 	}
 
-    @Override
     public void run(String... args) {
 
 	}
