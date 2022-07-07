@@ -53,10 +53,9 @@ public class LogIn_SignUpController {
         if(bindingResult.hasErrors())
             return "log-in";
 
-        if (!user.getPass().equals(user.getConfermapass()))
-            return "sign-up";
 
-        userRepository.save(user);
+
+
         return "redirect:/homepage";
     }
 
