@@ -16,7 +16,7 @@ public class HomepageController {
         return "homepage";
     }
 
-    /*@PostMapping("/")
+   /* @PostMapping("/")
     public String checkPersonInfo(@Valid Research research, BindingResult bindingResult) {
         if (bindingResult.hasErrors())
             return "homepage";
