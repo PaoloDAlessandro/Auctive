@@ -3,6 +3,7 @@ package it.itsrizzoli.auctive.controllers;
 import it.itsrizzoli.auctive.dao.UserRepository;
 import it.itsrizzoli.auctive.model.User;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -10,6 +11,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 
 import javax.servlet.http.HttpSession;
 import javax.validation.Valid;
+import java.util.ArrayList;
 
 @Controller
 public class LogIn_SignUpController {
@@ -55,11 +57,9 @@ public class LogIn_SignUpController {
         if(bindingResult.hasErrors())
             return "log-in";
 
-
-
-
         return "redirect:/homepage";
     }
+
 
     @GetMapping("/homepage")
     public String homepage() {
