@@ -13,13 +13,13 @@ public class HomepageController {
 
     @GetMapping("/")
     public String getHomepage() {
-        return "homepage";
+        return "index";
     }
 
     @PostMapping("/")
     public String checkPersonInfo(@Valid Research research, BindingResult bindingResult) {
         if (bindingResult.hasErrors())
-            return "homepage";
+            return "index";
         return "redirect:/research-results";
     }
 /*
