@@ -2,14 +2,34 @@
 <html lang="en" xmlns:th="https://thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/auctive.css">
+    <script src="https://kit.fontawesome.com/9d05a115fd.js" crossorigin="anonymous"></script>
+    <title>Auction</title>
 </head>
 <body>
-    <table>
-        <th:block th:each="auction : ${listauction}">
-            <tr>
-                <td th:text="${auction.product.product_image_url}"></td>
-            </tr>\
-    </table>
+
+<section class="auction_container">
+    <th:block th:each="auction : ${listauction}">
+        <div class="auction_card">
+            <div class="auction_card-img">
+                <img th:src="@{'/img/products/' + ${auction.getProduct().getproductImageUrl()}}">
+            </div>
+
+            <div class="auction_card-content">
+                <h4 th:text="${auction.getProduct().getProductName()}"></h4>
+                <h6>By Robert Hanu</h6>
+            </div>
+
+            <div class="auction_card-content_bottom">
+                <h6>Mancano 5 giorni</h6>
+                <a href="#makeAnOffer">Make an offer</a>
+            </div>
+        </div>
+    </th:block>
+
+</section>
+
 </body>
 </html>
