@@ -19,7 +19,6 @@ public class AuctionApplication implements CommandLineRunner {
 
     @Override
     public void run(String... args) {
-		User user = new User("Mario", "Rossi", "mariorossi@gmail.com", "m@r.it", "password", 1, "aaaaaaa");
-		userRepository.save(user);
+
 	}
 }

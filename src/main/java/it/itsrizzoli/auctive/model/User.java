@@ -1,5 +1,6 @@
 package it.itsrizzoli.auctive.model;
 
+import java.time.LocalDate;
 import java.util.HashSet;
 import java.util.Set;
 import javax.persistence.*;
@@ -44,8 +45,8 @@ public class User {
 	@NotNull(message="Sex deve essere inserito")
 	Integer sex;
 
-	/*@NotNull(message="birthDate deve essere inserito")
-	LocalDate birthdate;*/
+	@NotNull(message="birthDate deve essere inserito")
+	LocalDate birthdate;
 
 	@Size(min= 5, max=200)
 	@NotNull(message = "Address deve essere inserito")
@@ -60,7 +61,7 @@ public class User {
     //il costruttore di default è NECESSARIO
     public User() {}
 
-	public User(String nameUser, String surnameUser, String emailUser, String username, String pass, Integer sex, String address) {
+	public User(String nameUser, String surnameUser, String emailUser, String username, String pass, Integer sex, String address, LocalDate birthdate) {
 		this.nameUser = nameUser;
 		this.surnameUser = surnameUser;
 		this.emailUser = emailUser;
@@ -69,6 +70,7 @@ public class User {
 		this.confermapass = "password";
 		this.sex = sex;
 		this.address = address;
+		this.birthdate = birthdate;
 	}
 
 	public Integer getIdUser() {
@@ -157,6 +159,14 @@ public class User {
 
 	public void setUserCards(Set<Card> userCards) {
 		this.userCards = userCards;
+	}
+
+	public LocalDate getBirthdate() {
+		return birthdate;
+	}
+
+	public void setBirthdate(LocalDate birthdate) {
+		this.birthdate = birthdate;
 	}
 
 	@Override

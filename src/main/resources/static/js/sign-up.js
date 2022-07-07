@@ -1,4 +1,4 @@
-//MOBILE SCRIPT - PAOLO
+ //MOBILE SCRIPT - PAOLO
 
 const name_mobile_input = document.getElementById("name_mobile");
 const surname_mobile_input = document.getElementById("surname_mobile");
