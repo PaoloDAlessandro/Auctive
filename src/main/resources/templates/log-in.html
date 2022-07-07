@@ -3,10 +3,10 @@
 <head>
     <meta   charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <link rel="stylesheet" href="/fonts/stylesheet.css">
+    <!--link rel="stylesheet" href="/fonts/stylesheet.css">
     <link rel="stylesheet" href="/css/log-in.css">
     <link rel="stylesheet" href="/css/sing-up.css">
-    <link rel="stylesheet" href="/css/main.css">
+    <link rel="stylesheet" href="/css/main.css"-->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://kit.fontawesome.com/9d05a115fd.js" crossorigin="anonymous"></script>
     <title>Auctive</title>
@@ -68,16 +68,19 @@
             <div class="log-in_title">
                 <h1>Log-in</h1>
             </div>
-            <form th:action="@{/log-in}" th:object="${user}" method="post">
-                <input type="text" th:field="*{username}" id="username" placeholder="Username">
+
+            <form th:action="@{/log-in}" th:object="${loginForm}" method="post">
+                <input type="text" th:field="*{username}" id="username_mobile" placeholder="Username">
                 <label th:if="${#fields.hasErrors('username')}" th:errors="*{username}" />
-                <input type="password" th:field="*{pass}" id="password" placeholder="Password">
+                <input type="password" th:field="*{pass}" id="password_mobile" placeholder="Password">
                 <label th:if="${#fields.hasErrors('pass')}" th:errors="*{pass}" />
 
                 <a href="">Forgot password?</a>
 
                 <button type="submit">Log-in</button>
             </form>
+
+
 
             <div class="alternative_log-in">
                 <a href="#google"><div class="option"><img src="/img/brands/google.png" alt="google_icon"></div></a>
@@ -92,6 +95,7 @@
         </div>
     </div>
 </section>
+
 
 
 <script src="../index.js"></script>

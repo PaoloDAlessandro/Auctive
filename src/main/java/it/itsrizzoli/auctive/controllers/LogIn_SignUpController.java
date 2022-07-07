@@ -1,6 +1,7 @@
 package it.itsrizzoli.auctive.controllers;
 
 import it.itsrizzoli.auctive.dao.UserRepository;
+import it.itsrizzoli.auctive.model.LoginForm;
 import it.itsrizzoli.auctive.model.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.jpa.repository.Query;
@@ -18,15 +19,13 @@ public class LogIn_SignUpController {
     @Autowired
     UserRepository userRepository;
 
-
-
     @GetMapping("/sign-up")
     public String getSignup(User user) {
         return "sign-up";
     }
 
     @PostMapping("/sign-up")
-    public String addnewUser(@Valid User user, BindingResult bindingResult, HttpSession sessione) {
+    public String addnewUser(@Valid User user, BindingResult bindingResult, HttpSession session) {
         if(bindingResult.hasErrors())
             return "sign-up";
 
@@ -35,7 +34,7 @@ public class LogIn_SignUpController {
 
         userRepository.save(user);
 
-        sessione.setAttribute("userLogged", user);
+        session.setAttribute("userLogged", user.getEmailUser());
         return "redirect:/homepage";
     }
 
@@ -46,25 +45,27 @@ public class LogIn_SignUpController {
     //altrimetodi se utente loggato
     //User utenteloggato = sessione.getAttribute("utenteloggato");
     //if (utenteloggayo != null) allora utente è loggato
-
     @GetMapping("/log-in")
-    public String getLogin(User user) {
+    public String getLogin(LoginForm loginForm) {
         return "log-in";
     }
 
     @PostMapping("/log-in")
-    public String connectUser(@Valid User user, BindingResult bindingResult) {
-        if(bindingResult.hasErrors())
-            return "log-in";
+    public String connectUser(@Valid LoginForm loginForm, BindingResult bindingResult, HttpSession session) {
+
+        User log = userRepository.login(loginForm.getUsername(), loginForm.getPass()).get(0);
+        session.setAttribute("userLogged", log.getEmailUser());
 
         return "redirect:/homepage";
     }
 
-
-    @GetMapping("/homepage")
+    @GetMapping("/")
     public String homepage() {
-        return "homepage";
+        return "/";
     }
+
+
+
 
     //userRepository.save(new Utente(........));
 }
