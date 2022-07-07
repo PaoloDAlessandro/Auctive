@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <link rel="stylesheet" href="/fonts/stylesheet.css">
+    <!--link rel="stylesheet" href="/fonts/stylesheet.css">
     <link rel="stylesheet" href="/css/log-in.css">
     <link rel="stylesheet" href="/css/sing-up.css">
-    <link rel="stylesheet" href="/css/main.css">
+    <link rel="stylesheet" href="/css/main.css"-->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://kit.fontawesome.com/9d05a115fd.js" crossorigin="anonymous"></script>
     <title>Auctive</title>
@@ -124,10 +124,10 @@
         <label th:if="${#fields.hasErrors('pass')}" th:errors="*{pass}" />
         <input type="password" th:field="*{confermapass}" id="confirm_password_mobile" placeholder="Confirm password">
         <label th:if="${#fields.hasErrors('confermapass')}" th:errors="*{conferma_pass}" />
-        <input type="date" th:field="*{birthdate}">
+        <input type="date" th:field="*{birthdate}" id="birthdate">
         <label th:if="${#fields.hasErrors('birthdate')}" th:errors="*{birthdate}" />
-        <input type="text" th:field="*{sex}" placeholder="Sex">
-        <label th:if="${#fields.hasErrors('sex')}" th:errors="*{sex}" />
+        <!--input type="text" th:field="*{sex}" placeholder="Sex" id="confirm_password_mobile">
+        <label th:if="${#fields.hasErrors('sex')}" th:errors="*{sex}" /-->
         <input type="text" th:field="*{address}" placeholder="Address">
         <label th:if="${#fields.hasErrors('address')}" th:errors="*{address}" />
         <input type="submit" id="mobile_sign-in_next" value="Next" />
