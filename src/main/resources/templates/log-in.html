@@ -68,10 +68,12 @@
             <div class="log-in_title">
                 <h1>Log-in</h1>
             </div>
-            <form action="">
+            <form th:action="@{/log-in}" th:object="${user}" method="post">
+                <input type="text" th:field="*{username}" id="username" placeholder="Username">
+                <label th:if="${#fields.hasErrors('username')}" th:errors="*{username}" />
+                <input type="password" th:field="*{pass}" id="password" placeholder="Password">
+                <label th:if="${#fields.hasErrors('pass')}" th:errors="*{pass}" />
 
-                <input type="text" name="username" id="username" placeholder="Username">
-                <input type="text" name="password" id="password" placeholder="Password">
                 <a href="">Forgot password?</a>
 
                 <button type="submit">Log-in</button>
@@ -88,33 +90,6 @@
                 <a href="/sign-up">Sing up</a>
             </div>
         </div>
-    </div>
-</section>
-
-<section class="mobile_log-in">
-    <div class="mobile_log-in_logo">
-        <img src="../imgs/logo-icon.png" alt="">
-    </div>
-
-    <div class="mobile_log-in_title">
-        <h3>Log-in</h3>
-    </div>
-
-    <form action="" class="mobile_log-in_form">
-        <input type="text" name="mobile_username" id="mobile_username" placeholder="Username">
-        <input type="password" name="mobile_password" id="mobile_password" placeholder="Password">
-        <button type="submit" class="mobile_log-in_button">Log-in</button>
-    </form>
-
-    <div class="mobile-alternative_log-in">
-        <div class="mobile-alternative_log-in_single-img"><img src="../imgs/brands/google.png" alt="google_icon"></div>
-        <div class="mobile-alternative_log-in_single-img"><img src="../imgs/brands/facebook.png" alt="facebook_icon"></div>
-        <div class="mobile-alternative_log-in_single-img"><img src="../imgs/brands/apple.png" alt="apple_icon"></div>
-    </div>
-
-    <div class="mobile_no-account">
-        <h4>Don't have an account?</h4>
-        <a href="/sign-up">sing-up</a>
     </div>
 </section>
 

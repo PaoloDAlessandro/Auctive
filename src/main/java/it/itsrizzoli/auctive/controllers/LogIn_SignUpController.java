@@ -16,10 +16,7 @@ public class LogIn_SignUpController {
     @Autowired
     UserRepository userRepository;
 
-    @GetMapping("/log-in")
-    public String getLogin() {
-        return "log-in";
-    }
+
 
     @GetMapping("/sign-up")
     public String getSignup(User user) {
@@ -47,6 +44,11 @@ public class LogIn_SignUpController {
     //altrimetodi se utente loggato
     //User utenteloggato = sessione.getAttribute("utenteloggato");
     //if (utenteloggayo != null) allora utente è loggato
+
+    @GetMapping("/log-in")
+    public String getLogin(User user) {
+        return "log-in";
+    }
 
     @PostMapping("/log-in")
     public String connectUser(@Valid User user, BindingResult bindingResult) {
