@@ -18,11 +18,11 @@ public class AppController {
     @Autowired
     private ProductService service;
 
-    @RequestMapping("/research-results")
+    @RequestMapping("/product-list")
     public String viewHomepage(Model model) {
         List<Product> listProducts = service.listAll();
         model.addAttribute("listProducts", listProducts);
-        return "research-results";
+        return "product-list";
     }
 
     @RequestMapping("/new")
