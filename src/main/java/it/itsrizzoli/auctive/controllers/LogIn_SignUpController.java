@@ -8,6 +8,7 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 
+import javax.servlet.http.HttpSession;
 import javax.validation.Valid;
 
 @Controller
@@ -26,9 +27,31 @@ public class LogIn_SignUpController {
     }
 
     @PostMapping("/sign-up")
-    public String addnewUser(@Valid User user, BindingResult bindingResult) {
+    public String addnewUser(@Valid User user, BindingResult bindingResult, HttpSession sessione) {
         if(bindingResult.hasErrors())
             return "sign-up";
+
+        if (!user.getPass().equals(user.getConfermapass()))
+            return "sign-up";
+
+        userRepository.save(user);
+
+        sessione.setAttribute("userLogged", user);
+        return "redirect:/homepage";
+    }
+
+
+    //logout
+    //sessione.setAttribute("utenteloggato", null);
+
+    //altrimetodi se utente loggato
+    //User utenteloggato = sessione.getAttribute("utenteloggato");
+    //if (utenteloggayo != null) allora utente è loggato
+
+    @PostMapping("/log-in")
+    public String connectUser(@Valid User user, BindingResult bindingResult) {
+        if(bindingResult.hasErrors())
+            return "log-in";
 
         if (!user.getPass().equals(user.getConfermapass()))
             return "sign-up";
@@ -41,7 +64,6 @@ public class LogIn_SignUpController {
     public String homepage() {
         return "homepage";
     }
-
 
     //userRepository.save(new Utente(........));
 }

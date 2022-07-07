@@ -1,5 +1,6 @@
 package it.itsrizzoli.auctive.model;
 
+import java.time.LocalDate;
 import java.util.HashSet;
 import java.util.Set;
 import javax.persistence.*;
@@ -41,11 +42,11 @@ public class User {
 	@NotNull(message = "conferma deve esser inserito")
 	String confermapass;
 
-	@NotNull(message="Sex deve essere inserito")
-	Integer sex;
+	/*@NotNull(message="Sex deve essere inserito")
+	Integer sex;*/
 
-	/*@NotNull(message="birthDate deve essere inserito")
-	LocalDate birthdate;*/
+	@NotNull(message="birthDate deve essere inserito")
+	LocalDate birthdate;
 
 	@Size(min= 5, max=200)
 	@NotNull(message = "Address deve essere inserito")
@@ -60,15 +61,16 @@ public class User {
     //il costruttore di default è NECESSARIO
     public User() {}
 
-	public User(String nameUser, String surnameUser, String emailUser, String username, String pass, Integer sex, String address) {
+	public User(String nameUser, String surnameUser, String emailUser, String username, String pass, String address, LocalDate birthdate) {
 		this.nameUser = nameUser;
 		this.surnameUser = surnameUser;
 		this.emailUser = emailUser;
 		this.username = username;
 		this.pass = pass;
 		this.confermapass = "password";
-		this.sex = sex;
+		//this.sex = sex;
 		this.address = address;
+		this.birthdate = birthdate;
 	}
 
 	public Integer getIdUser() {
@@ -127,13 +129,13 @@ public class User {
 		this.confermapass = confermapass;
 	}
 
-	public Integer getSex() {
+	/*public Integer getSex() {
 		return sex;
 	}
 
 	public void setSex(Integer sex) {
 		this.sex = sex;
-	}
+	}*/
 
 	public String getAddress() {
 		return address;
@@ -159,6 +161,14 @@ public class User {
 		this.userCards = userCards;
 	}
 
+	public LocalDate getBirthdate() {
+		return birthdate;
+	}
+
+	public void setBirthdate(LocalDate birthdate) {
+		this.birthdate = birthdate;
+	}
+
 	@Override
 	public String toString() {
 		return "User{" +
@@ -169,7 +179,6 @@ public class User {
 				", username='" + username + '\'' +
 				", pass='" + pass + '\'' +
 				", confermapass='" + confermapass + '\'' +
-				", sex=" + sex +
 				", address='" + address + '\'' +
 				", pu=" + pu +
 				", userCards=" + userCards +
