@@ -14,44 +14,67 @@
 
 <section class="profile-data-section" id="profile-section">
     <div class="your-profile">
-        <img src="img/account/profile-avatar.png" class="profile-image"/>
-        <a href="/profile-edit" > Edit profile</a>
+        <!--img th:src="@{'/img/account/' + ${user.getAvatar()}}" class="profile-avatar"-->
+
+        <a href="/profile/edit" > Edit profile</a>
+
         <h2 class="profile-username">username</h2>
+        <h2 th:text="${user.username}"/>
+
         <p class="profile-name">Name</p>
+        <p th:text="${user.nameUser}"/>
     </div>
 </section>
 
 <section>
     <div>
-        <p> Active </p>
+        <p>Active</p>
     </div>
     <div>
-        <p> Collection </p>
+        <p>Collection</p>
     </div>
     <div>
-        <p> Stats </p>
+        <p>Stats</p>
     </div>
 </section>
 
-<section class="profile-product-container">
-    <div>
-        <img src="img/account/profile-avatar.png" class="profile-product"/>
-        <p> Product Name </p>
-        <p> Product Description. </p>
-    </div>
+<!-- Active and Collections -->
+<!--section class="profile-product-container">
+    <div class="profile-product-card">
+        <div class="profile-product-img">
+            <img th:src="@{'/img/products/' + ${user.getPu().getproductImageUrl()}}">
+        </div>
 
-    <div>
-        <img src="img/account/profile-avatar.png" class="profile-product"/>
-        <p> Product Name </p>
-        <p> Product Description. </p>
-    </div>
+        <div class="profile-product-name">
+            <p th:text="${user.getPu().getProductName()}"/>
+        </div>
 
-    <div>
-        <img src="img/account/profile-avatar.png" class="profile-product"/>
-        <p> Product Name </p>
-        <p> Product Description. </p>
+        <div class="profile-product-description">
+            <p th:text="${user.getPu().getProductDescription()}"/>
+        </div>
     </div>
-</section>
+</section-->
+
+<!-- Stats -->
+<!--section class="profile-stats-container" id="stats-section">
+
+    <h1 class="profile-stats-title">Profile Stats</h1>
+    <p class="div-title">Auctions: </h1>
+
+    <div class="profile-stats">
+        <p>Auctions done:</p>
+        <p th:text="${user.auctionsDone}"/>
+        <p>0</p>
+
+        <p>Auctions won:</p>
+        <p th:text="${user.auctionsWon}"/>
+        <p>0</p>
+
+        <p>Auctions lost:</p>
+        <p th:text="${user.auctionsLost}"/>
+        <p>0</p>
+    </div>
+</section-->
 
 <script src="js/account.js"></script>
 <script src="https://kit.fontawesome.com/130673bc48.js" crossorigin="anonymous"></script>

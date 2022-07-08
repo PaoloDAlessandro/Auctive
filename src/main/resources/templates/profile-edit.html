@@ -9,11 +9,11 @@
     <title>Edit Profile</title>
 </head>
 
-<body id="profile-body">
+<body id="profile-edit-body">
 
-<section class="profile-data-section" id="profile-section">
+<!-- section class="profile-data-section" id="profile-section">
     <div>
-        <img src="img/profile/profile-avatar.png" class="profile-edit-image"/>
+        <img src="img/account/profile-avatar.png" class="profile-edit-image"/>
 
         <p class="data-name">Username</p>
         <input type="text" placeholder="Username" autocomplete="off" class="profile-edit-username">
@@ -96,30 +96,50 @@
     <div class="bottom-div">
         <i class="fa-solid fa-circle-plus" id="add-card"></i>
     </div>
-</section>
 
-<section class="account-data-section" id="record-section">
-    <h1 class="page-title">Record delle attività effettuate</h1>
+</section -->
 
-    <h1 class="div-title">Aste effettuate</h1>
-
-    <div class="record-effettuate">
-        <p class="aste-partecipate">Aste partecipate:</p>
-        <p class="aste-partecipate_number">0</p>
-
-        <p class="aste-vinte">Aste vinte:</p>
-        <p class="aste-vinte_number">0</p>
-
-        </br>
-        </br>
-
-        <p class="totale-offerte">Totale offerte:</p>
-        <p class="totale-offerte_number">0</p>
-
-        <p class="aste-perse">Aste perse:</p>
-        <p class="aste-perse_number">0</p>
-    </div>
-</section>
+<div align="center">
+    <h1>Edit Profile</h1>
+    <br/>
+    <form action="#" th:action="@{/save}" th:object="${user}" method="post">
+        <table border="0" cellpadding="10">
+            <tr>
+                <td>User ID:</td>
+                <td><input type="text" th:field="*{idUser}" readonly="readonly"/></td>
+            </tr>
+            <!--tr>
+                <td>Avatar:</td>
+                <td><input type="text" th:field="*{avatar}"/></td>
+            </tr-->
+            <tr>
+                <td>Username:</td>
+                <td><input type="text" th:field="*{username}"/></td>
+            </tr>
+            <tr>
+                <td>Name:</td>
+                <td><input type="text" th:field="*{nameUser}"/></td>
+            </tr>
+            <tr>
+                <td>Surname:</td>
+                <td><input type="text" th:field="*{surnameUser}"/></td>
+            </tr>
+            <tr>
+                <td>E-mail:</td>
+                <td><input type="text" th:field="*{emailUser}"/></td>
+            </tr>
+            <tr>
+                <td>Password:</td>
+                <td><input type="text" th:field="*{pass}"/></td>
+            </tr>
+            <!--tr>
+                <td>Cards:</td>
+                <td><input type="text" th:field="*{pass}"/></td>
+            </tr-->
+            <td colspan="2"><button type="submit">Save</button></td>
+        </table>
+    </form>
+</div>
 
 <script src="js/account.js"></script>
 <script src="https://kit.fontawesome.com/130673bc48.js" crossorigin="anonymous"></script>

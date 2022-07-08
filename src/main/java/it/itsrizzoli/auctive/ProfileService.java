@@ -1,5 +1,6 @@
 package it.itsrizzoli.auctive;
 
+import it.itsrizzoli.auctive.dao.ProfileRepository;
 import it.itsrizzoli.auctive.model.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
