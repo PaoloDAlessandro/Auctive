@@ -1,5 +1,7 @@
 package it.itsrizzoli.auctive.model;
 
+import org.springframework.format.annotation.DateTimeFormat;
+
 import java.time.LocalDate;
 import java.util.HashSet;
 import java.util.Set;
@@ -11,30 +13,30 @@ import javax.validation.constraints.Size;
 @Entity
 @Table(name = "users")
 public class User {
-    @Id
-    @GeneratedValue(strategy=GenerationType.AUTO)
-    private Integer idUser;
+	@Id
+	@GeneratedValue(strategy=GenerationType.AUTO)
+	private Integer idUser;
 
-    @Size(min=2, max=50, message = "Nome deve esser tra 2 e 50 caratteri")
-    @NotNull(message = "Nome deve esser inserito")
-    //@Column(name="firstname")
+	@Size(min=2, max=50, message = "Nome deve esser tra 2 e 50 caratteri")
+	@NotNull(message = "Nome deve esser inserito")
+	//@Column(name="firstname")
 	String nameUser;
-    
-    @Size(min=2, max=50, message = "Cognome deve esser tra 2 e 50 caratteri")
-    @NotNull(message = "Cognome deve esser inserito")
+
+	@Size(min=2, max=50, message = "Cognome deve esser tra 2 e 50 caratteri")
+	@NotNull(message = "Cognome deve esser inserito")
 	String surnameUser;
-	
-    @Size(min=4, max=319, message = "Email deve esser tra 5 e 25 caratteri")
-    @Email(message = "Email inserita non valida")
-    @NotNull(message = "Email deve esser inserito")
+
+	@Size(min=4, max=319, message = "Email deve esser tra 5 e 25 caratteri")
+	@Email(message = "Email inserita non valida")
+	@NotNull(message = "Email deve esser inserito")
 	String emailUser;
-	
-    @Size(min=4, max=100, message = "Username deve esser tra 4 e 100 caratteri")
-    @NotNull(message = "Username deve esser inserito")
+
+	@Size(min=4, max=100, message = "Username deve esser tra 4 e 100 caratteri")
+	@NotNull(message = "Username deve esser inserito")
 	String username;
-    
-    @Size(min=6, max=25, message = "Password deve esser tra 6 e 25 caratteri")
-    @NotNull(message = "Password deve esser inserito")
+
+	@Size(min=6, max=25, message = "Password deve esser tra 6 e 25 caratteri")
+	@NotNull(message = "Password deve esser inserito")
 	String pass;
 
 	@Transient
@@ -42,9 +44,10 @@ public class User {
 	@NotNull(message = "conferma deve esser inserito")
 	String confermapass;
 
-	/*@NotNull(message="Sex deve essere inserito")
-	Integer sex;*/
+   /*@NotNull(message="Sex deve essere inserito")
+   Integer sex;*/
 
+	@DateTimeFormat(iso = DateTimeFormat.ISO.DATE)
 	@NotNull(message="birthDate deve essere inserito")
 	LocalDate birthdate;
 
@@ -58,8 +61,8 @@ public class User {
 	@OneToMany(mappedBy = "userCard", cascade = CascadeType.ALL)
 	Set<Card> userCards = new HashSet<>();
 
-    //il costruttore di default è NECESSARIO
-    public User() {}
+	//il costruttore di default è NECESSARIO
+	public User() {}
 
 	public User(String nameUser, String surnameUser, String emailUser, String username, String pass, String address, LocalDate birthdate) {
 		this.nameUser = nameUser;
@@ -72,7 +75,6 @@ public class User {
 		this.address = address;
 		this.birthdate = birthdate;
 	}
-
 	public Integer getIdUser() {
 		return idUser;
 	}
@@ -129,13 +131,13 @@ public class User {
 		this.confermapass = confermapass;
 	}
 
-	/*public Integer getSex() {
-		return sex;
-	}
+   /*public Integer getSex() {
+      return sex;
+   }
 
-	public void setSex(Integer sex) {
-		this.sex = sex;
-	}*/
+   public void setSex(Integer sex) {
+      this.sex = sex;
+   }*/
 
 	public String getAddress() {
 		return address;

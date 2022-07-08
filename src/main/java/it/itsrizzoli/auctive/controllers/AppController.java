@@ -5,10 +5,7 @@ import it.itsrizzoli.auctive.model.Product;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
 import java.util.List;
@@ -18,6 +15,15 @@ public class AppController {
     @Autowired
     private ProductService service;
 
+
+/*
+    @GetMapping("/result")
+    public String showProdcutsSearched(@RequestParam("term") String term, Model model) {
+        List<Product> result = service.listAll();
+        model.addAttribute("result", result);
+        return "result";
+    }
+*/
     @RequestMapping("/product-list")
     public String viewHomepage(Model model) {
         List<Product> listProducts = service.listAll();

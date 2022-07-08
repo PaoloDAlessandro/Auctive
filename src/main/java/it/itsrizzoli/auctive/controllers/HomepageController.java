@@ -1,5 +1,6 @@
 package it.itsrizzoli.auctive.controllers;
 
+//import it.itsrizzoli.auctive.model.Research;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -10,19 +11,19 @@ import javax.validation.Valid;
 @Controller
 public class HomepageController {
 
-    @GetMapping("/")
+    @GetMapping("/home")
     public String getHomepage() {
-        return "index";
+        return "homepage";
     }
 
-    @PostMapping("/")
-    public String checkPersonInfo(BindingResult bindingResult) {
+   /* @PostMapping("/")
+    public String checkPersonInfo(@Valid Research research, BindingResult bindingResult) {
         if (bindingResult.hasErrors())
-            return "index";
+            return "homepage";
         return "redirect:/research-results";
-    }
-/*
+    }*/
+
     @GetMapping("/research-results")
-    public String results() { return "research-results"; } */
+    public String results() { return "research-results"; }
 }
 
