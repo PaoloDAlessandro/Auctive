@@ -1,21 +1,13 @@
 package it.itsrizzoli.auctive.controllers;
-
-import it.itsrizzoli.auctive.ProductRepository;
-import it.itsrizzoli.auctive.ProfileRepository;
-import it.itsrizzoli.auctive.model.Auction;
-import it.itsrizzoli.auctive.model.Product;
-import it.itsrizzoli.auctive.model.ProductUser;
+import it.itsrizzoli.auctive.dao.ProfileRepository;
 import it.itsrizzoli.auctive.model.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.HttpSession;
-import java.util.ArrayList;
 
 @Controller
 @RequestMapping(value = "/profile")

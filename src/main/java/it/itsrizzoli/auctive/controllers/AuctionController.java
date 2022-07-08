@@ -1,6 +1,6 @@
 package it.itsrizzoli.auctive.controllers;
 
-import it.itsrizzoli.auctive.AuctionRepository;
+import it.itsrizzoli.auctive.dao.AuctionRepository;
 import it.itsrizzoli.auctive.model.Auction;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
