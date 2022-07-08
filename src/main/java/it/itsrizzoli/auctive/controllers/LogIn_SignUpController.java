@@ -59,6 +59,13 @@ public class LogIn_SignUpController {
         return "redirect:/homepage";
     }
 
+    @GetMapping("/")
+    public String homepage() {
+        return "/";
+    }
+
+
+
 
     //userRepository.save(new Utente(........));
 }
