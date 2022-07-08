@@ -11,19 +11,10 @@ import javax.validation.Valid;
 @Controller
 public class HomepageController {
 
-    @GetMapping("/home")
+    @GetMapping("/")
     public String getHomepage() {
-        return "homepage";
+        return "/index";
     }
 
-   /* @PostMapping("/")
-    public String checkPersonInfo(@Valid Research research, BindingResult bindingResult) {
-        if (bindingResult.hasErrors())
-            return "homepage";
-        return "redirect:/research-results";
-    }*/
-
-    @GetMapping("/research-results")
-    public String results() { return "research-results"; }
 }
 

@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <!--link rel="stylesheet" href="/fonts/stylesheet.css">
+    <link rel="stylesheet" href="/fonts/stylesheet.css">
     <link rel="stylesheet" href="/css/log-in.css">
     <link rel="stylesheet" href="/css/sing-up.css">
-    <link rel="stylesheet" href="/css/main.css"-->
+    <link rel="stylesheet" href="/css/main.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://kit.fontawesome.com/9d05a115fd.js" crossorigin="anonymous"></script>
     <title>Auctive</title>
@@ -65,36 +65,29 @@
         <div class="column-60_absolute">
 
             <div class="sign-up_title">
-                <h1>Sign-in</h1>
+                <h1>Sign-up</h1>
             </div>
 
             <form th:action="@{/sign-up}" th:object="${user}" method="post" class="sign-up_form">
-                <input type="text"  th:field="*{nameUser}" id="name_mobile" placeholder="Name">
+                <input type="text"  th:field="*{nameUser}" class="first-inputs" id="name" placeholder="Name">
                 <label th:if="${#fields.hasErrors('nameUser')}" th:errors="*{name_user}" />
-                <input type="text" th:field="*{surnameUser}" id="surname_mobile" placeholder="Surname">
+                <input type="text" th:field="*{surnameUser}" id="surname" class="first-inputs" placeholder="Surname">
                 <label th:if="${#fields.hasErrors('surnameUser')}" th:errors="*{surname_user}" />
-                <input type="email" th:field="*{emailUser}" id="email_mobile" placeholder="Email">
+                <input type="email" th:field="*{emailUser}" id="email" class="first-inputs" placeholder="Email">
                 <label th:if="${#fields.hasErrors('emailUser')}" th:errors="*{email}" />
-                <input type="text" th:field="*{username}" id="username_mobile" placeholder="Username">
+                <input type="text" th:field="*{username}" id="username" class="second-inputs" placeholder="Username">
                 <label th:if="${#fields.hasErrors('username')}" th:errors="*{username}" />
-                <input type="password" th:field="*{pass}" id="password_mobile" placeholder="Password">
-                <label th:if="${#fields.hasErrors('pass')}" th:errors="*{pass}" />
-                <input type="password" th:field="*{confermapass}" id="confirm_password_mobile" placeholder="Confirm password">
-                <label th:if="${#fields.hasErrors('confermapass')}" th:errors="*{conferma_pass}" />
-                <input type="date" th:field="*{birthdate}" th:value="${#temporals.format(birthdate,'yyyy-MM-dd')}" id="birthdate">
+                <input type="date" th:field="*{birthdate}" class="second-inputs" th:value="${#temporals.format(birthdate,'yyyy-MM-dd')}" id="birthdate">
                 <label th:if="${#fields.hasErrors('birthdate')}" th:errors="*{birthdate}" />
-                <!--input type="text" th:field="*{sex}" placeholder="Sex" id="confirm_password_mobile">
-                <label th:if="${#fields.hasErrors('sex')}" th:errors="*{sex}" /-->
-                <input type="text" th:field="*{address}" placeholder="Address">
-                <label th:if="${#fields.hasErrors('address')}" th:errors="*{address}" />
-                <input type="submit" class="sign-in_button" value="Next" />
+                <input type="password" th:field="*{pass}" id="password" class="second-inputs" placeholder="Password">
+                <label th:if="${#fields.hasErrors('pass')}" th:errors="*{pass}" />
+                <input type="password" th:field="*{confermapass}" class="second-inputs" id="confirm_password" placeholder="Confirm password">
+                <label th:if="${#fields.hasErrors('confermapass')}" th:errors="*{conferma_pass}" />
+                <input type="text" th:field="*{address}" placeholder="Address" class="first-inputs" id="address">
+                <label th:if="${#fields.hasErrors('address')}" th:errors="*{address}"/>
+                <input type="button" value="Next" id="next" class="first-inputs"/>
+                <input type="submit" value="Sign-up" id="submit" class="second-inputs"/>
             </form>
-
-            <div class="alternative_log-in">
-                <a href="#google"><div class="option"><img src="/img/brands/google.png" alt="google_icon"></div></a>
-                <a href="#facebook"><div class="option"><img src="/img/brands/facebook.png" alt="facebook_icon"></div></a>
-                <a href="#apple"><div class="option"><img src="/img/brands/apple.png" alt=""></div></a>
-            </div>
 
             <div class="no-account sign-in_no-account">
                 <h4>Have an account?</h4>

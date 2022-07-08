@@ -8,7 +8,7 @@
 }
 
 .log-in .column-60 form input {
-    margin-bottom: 40px;
+    margin-bottom: 20px;
 }
 
 .log-in .alternative_log-in {
@@ -37,34 +37,48 @@
     margin-top: 0 !important;
 }
 
-#mobile_sign-in_next {
+#email{
     display: block;
-    padding: 16px 40px;
-    border-radius: 16px;
-    margin-left: auto;
-    margin-right: auto;
-    outline: none;
-    border: 0;
-    color: #183153;
-    font-weight: 600;
-    background-color: #FFD43B;
-    box-shadow: rgb(0 0 0 / 2%) 0px 1px 3px 0px, rgb(27 31 35 / 15%) 0px 0px 0px 1px;
 }
 
-#email_mobile {
+#username{
     display: none;
 }
 
-#username_mobile {
+#password{
     display: none;
 }
 
-#password_mobile {
+#confirm_password{
     display: none;
 }
 
-#confirm_password_mobile {
+#name{
+    display: block;
+}
+
+#surname{
+    display: block;
+}
+
+#birthdate{
     display: none;
+}
+
+#address{
+    display: block;
+}
+
+#submit{
+    display: none;
+     background: #FFD43B;
+     cursor: pointer;
+}
+
+#next{
+    display: block;
+    background: #FFD43B;
+    cursor: pointer;
 }
 
 @keyframes fade-in {
@@ -87,5 +101,5 @@
     100% {
         opacity: 0;
     }
-    
+
 }

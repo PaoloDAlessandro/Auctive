@@ -35,7 +35,7 @@ public class LogIn_SignUpController {
         userRepository.save(user);
 
         session.setAttribute("userLogged", user.getEmailUser());
-        return "redirect:/homepage";
+        return "redirect:/";
     }
 
 
@@ -56,7 +56,7 @@ public class LogIn_SignUpController {
         User log = userRepository.login(loginForm.getUsername(), loginForm.getPass()).get(0);
         session.setAttribute("userLogged", log.getEmailUser());
 
-        return "redirect:/homepage";
+        return "redirect:/";
     }
 
 
