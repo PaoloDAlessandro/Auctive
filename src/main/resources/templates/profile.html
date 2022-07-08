@@ -18,11 +18,8 @@
 
         <a href="/profile/edit" > Edit profile</a>
 
-        <h2 class="profile-username">username</h2>
-        <h2 th:text="${user.username}"/>
-
-        <p class="profile-name">Name</p>
-        <p th:text="${user.nameUser}"/>
+        <h2 class="profile-username" th:text="${user.username}"/>
+        <p class="profile-name" th:text="${user.nameUser}"/>
     </div>
 </section>
 
