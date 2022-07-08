@@ -17,14 +17,16 @@
                 <img th:src="@{'/img/products/' + ${auction.getProduct().getproductImageUrl()}}">
             </div>
 
+            <div class="auction_card-info">
             <div class="auction_card-content">
-                <h4 th:text="${auction.getProduct().getProductName()}"></h4>
+                <h4 th:text="${auction.product.getProductName()}"></h4>
                 <h6>By Robert Hanu</h6>
             </div>
 
             <div class="auction_card-content_bottom">
                 <h6>Mancano 5 giorni</h6>
-                <a href="#makeAnOffer">Make an offer</a>
+                <a th:href="@{'/auction/product?id=' + ${auction.getIdAuction()}}">Make an offer</a>
+            </div>
             </div>
         </div>
     </th:block>
