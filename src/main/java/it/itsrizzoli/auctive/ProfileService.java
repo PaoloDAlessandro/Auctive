@@ -1,25 +1,25 @@
 package it.itsrizzoli.auctive;
 
-import it.itsrizzoli.auctive.model.Product;
+import it.itsrizzoli.auctive.model.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 
 @Service
-public class ProductService {
+public class ProfileService {
     @Autowired
-    private ProductRepository repo;
+    private ProfileRepository repo;
 
-    public List<Product> listAll() {
-        return (List<Product>) repo.findAll();
+    public List<User> listAll() {
+        return (List<User>) repo.findAll();
     }
 
-    public void save(Product product) {
-        repo.save(product);
+    public void save(User user) {
+        repo.save(user);
     }
 
-    public Product get(Integer id) {
+    public User get(Integer id) {
         return repo.findById(id).get();
     }
 
