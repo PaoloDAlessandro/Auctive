@@ -53,19 +53,15 @@ public class LogIn_SignUpController {
     @PostMapping("/log-in")
     public String connectUser(@Valid LoginForm loginForm, BindingResult bindingResult, HttpSession session) {
 
+        if(bindingResult.hasErrors())
+            return "log-in";
+
+
         User log = userRepository.login(loginForm.getUsername(), loginForm.getPass()).get(0);
         session.setAttribute("userLogged", log.getEmailUser());
 
         return "redirect:/";
     }
-
-    @GetMapping("/")
-    public String homepage() {
-        return "/";
-    }
-
-
-
 
     //userRepository.save(new Utente(........));
 }
