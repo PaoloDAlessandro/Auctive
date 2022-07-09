@@ -4,16 +4,73 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/css/auctive.css">
+    <link rel="stylesheet" href="/css/productPage.css">
+    <link rel="stylesheet" href="/css/header.css">
     <script src="https://kit.fontawesome.com/9d05a115fd.js" crossorigin="anonymous"></script>
     <title>Auction</title>
 </head>
 <body>
 
-<section class="auction_container">
-    <h4 th:text="${auction.product}"></h4>
+<header>
+    <div class="logo">
+        <a href="index.html">
+            <img src="/img/logo.png" alt="">
+            <h2>uctive</h2>
+        </a>
+    </div>
+    <nav>
+        <a href="/">home</a>
+        <a href="">about</a>
+        <a href="/auction/all">auction</a>
+        <a href="/sign-up">log-in</a>
+    </nav>
 
-</section>
+    <nav class="mobile-nav" id="mobile-nav">
+        <div class="hamburger_line"></div>
+        <div class="hamburger_line"></div>
+        <div class="hamburger_line"></div>
+    </nav>
+
+
+    <div class="mobile-nav_options_container" id="mobile-nav_options_container">
+        <a href="">home</a>
+        <a href="">about</a>
+        <a href="">auction</a>
+        <a href="log-in/">log-in</a>
+        <div id="mobile-nav_options_container-exit">
+            <i class="fa-solid fa-xmark"></i>
+        </div>
+    </div>
+</header>
+
+
+<div class="auction_container">
+    <div class="auction_img">
+        <img th:src="@{'/img/products/' + ${auction.getProduct().getproductImageUrl()}}" alt="">
+    </div>
+
+    <div class="auction_content">
+        <h2 th:text="${auction.getProduct().getProductName()}"></h2>
+        <h4 th:text="${auction.getProduct().getBrand()}"></h4>
+        <h3 th:text="${auction.getStarterPrice()} + '$'"></h3>
+        <h5><b>Info:</b></h5>
+        <p th:text="${auction.getAuctionDescription()}"></p>
+        <h5><b>Product description:</b></h5>
+        <p th:text="${auction.getProduct().getProductDescription()}"></p>
+        <div class="auction_offer">
+            <div class="auction_offer-title">
+                <h4>Place a bid</h4>
+
+                <div class="auction_offer-options">
+                    <a th:text="${auction.getStarterPrice() + 2.5} + '$'" href=""></a>
+                    <a th:text="${auction.getStarterPrice() + 5} + '$'" href=""></a>
+                    <a th:text="${auction.getStarterPrice() + 10} + '$'" href=""></a>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
 
 </body>
 </html>
