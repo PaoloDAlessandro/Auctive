@@ -11,110 +11,14 @@
 
 <body id="profile-edit-body">
 
-<!-- section class="profile-data-section" id="profile-section">
-    <div>
-        <img src="img/account/profile-avatar.png" class="profile-edit-image"/>
-
-        <p class="data-name">Username</p>
-        <input type="text" placeholder="Username" autocomplete="off" class="profile-edit-username">
-
-        <p class="name">Name</p>
-        <input type="text" placeholder="Name" autocomplete="off" class="profile-edit-username">
-
-        <p class="surname">Surname</p>
-        <input type="text" placeholder="Surname" autocomplete="off" class="profile-edit-username">
-
-        <p class="e-mail">E-mail</p>
-        <input type="text" placeholder="m.stefani@itsrizzoli.it" autocomplete="off" class="profile-edit-username">
-
-        <p>Sex</p>
-        <input type="radio" id="male" name="sex" value="1">
-        <label for="male">Male</label><br>
-        <input type="radio" id="female" name="sex" value="2">
-        <label for="female">Female</label><br>
-        <input type="radio" id="other" name="sex" value="0">
-        <label for="other">Other</label>
-
-        <p>Telephone Number</p>
-        <select placeholder="+39" class="profile-edit-username">
-            <option>+39</option>
-            <option>+45</option>
-            <option>+29</option>
-            <option>+31</option>
-        </select>
-        <input type="text" placeholder="Telephone number" autocomplete="off" class="profile-edit-username">
-
-        <p class="eta">Age</p>
-        <input type="text" placeholder="Age" autocomplete="off" class="profile-edit-username">
-    </div>
-</section>
-
-<section class="account-data-section" id="payment-section">
-    <h1 class="page-title">Payment methods</h1>
-
-    <div class="scroll-cards">
-        <div class="credit-card_div">
-
-            <img src="img/account/master.png" class="card-image"/>
-            <h2 class="card-number">**** **** **** **90</h2>
-            <h2 class="card-owner">Marco Stefani</h2>
-            <i class="fa-solid fa-trash-can"></i>
-
-        </div>
-
-        <div class="credit-card_div">
-
-            <img src="img/account/master.png" class="card-image"/>
-            <h2 class="card-number">**** **** **** **45</h2>
-            <h2 class="card-owner">Marco Stefani</h2>
-            <i class="fa-solid fa-trash-can"></i>
-
-        </div>
-
-        <div class="credit-card_div">
-
-            <img src="img/account/master.png" class="card-image"/>
-            <h2 class="card-number">**** **** **** **45</h2>
-            <h2 class="card-owner">Marco Stefani</h2>
-            <i class="fa-solid fa-trash-can"></i>
-
-        </div>
-
-    </div>
-
-    <div class="card-information-div" id="card-information-div">
-        <i class="fa-solid fa-x" id="close-tab"></i>
-        <input class="card-info-name" type="text" placeholder="Nome"/>
-        <input class="card-info-surname" type="text" placeholder="Cognome"/>
-        <input class="card-info-number" type="text" placeholder="Numero della carta"/>
-        <input class="card-info-expiring-date" type="text" placeholder="Data di scadenza"/>
-        <input class="card-info-cvv" type="text" placeholder="CVV"/>
-
-        <input class="card-info-add" type="button" value="Add card"/>
-    </div>
-
-    <div class="bottom-div">
-        <i class="fa-solid fa-circle-plus" id="add-card"></i>
-    </div>
-
-</section -->
-
 <div align="center">
     <h1>Edit Profile</h1>
     <br/>
-    <form action="#" th:action="@{/save}" th:object="${user}" method="post">
+    <form action="#" th:action="@{/profile/save}" th:object="${user}" method="post">
         <table border="0" cellpadding="10">
             <tr>
-                <td>User ID:</td>
-                <td><input type="text" th:field="*{idUser}" readonly="readonly"/></td>
-            </tr>
-            <!--tr>
-                <td>Avatar:</td>
-                <td><input type="text" th:field="*{avatar}"/></td>
-            </tr-->
-            <tr>
                 <td>Username:</td>
-                <td><input type="text" th:field="*{username}"/></td>
+                <td><input type="text" th:field="*{username}" readonly="readonly"/></td>
             </tr>
             <tr>
                 <td>Name:</td>
@@ -126,17 +30,28 @@
             </tr>
             <tr>
                 <td>E-mail:</td>
-                <td><input type="text" th:field="*{emailUser}"/></td>
+                <td><input type="email" th:field="*{emailUser}"/></td>
             </tr>
             <tr>
                 <td>Password:</td>
-                <td><input type="text" th:field="*{pass}"/></td>
+                <td><input type="password" th:field="*{pass}"/></td>
             </tr>
-            <!--tr>
-                <td>Cards:</td>
-                <td><input type="text" th:field="*{pass}"/></td>
-            </tr-->
-            <td colspan="2"><button type="submit">Save</button></td>
+            <tr>
+                <td>Conferm Password:</td>
+                <td><input type="password" th:field="*{confermapass}"/></td>
+            </tr>
+            <tr>
+                <td>Address:</td>
+                <td><input type="text" th:field="*{address}"/></td>
+            </tr>
+            <tr>
+                <td>Birthdate:</td>
+                <td><input type="date" th:field="*{birthdate}"/></td>
+            </tr>
+            <tr>
+                <td><button class="profile-edit-save" type="submit">Save</button></td>
+                <td><button class="profile-edit-reset" type="reset">Back</button></td>
+            </tr>
         </table>
     </form>
 </div>

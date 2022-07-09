@@ -131,14 +131,6 @@ public class User {
 		this.confermapass = confermapass;
 	}
 
-   /*public Integer getSex() {
-      return sex;
-   }
-
-   public void setSex(Integer sex) {
-      this.sex = sex;
-   }*/
-
 	public String getAddress() {
 		return address;
 	}

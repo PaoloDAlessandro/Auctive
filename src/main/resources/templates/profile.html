@@ -16,7 +16,7 @@
     <div class="your-profile">
         <h2 class="profile-username" th:text="${user.username}"/>
         <p class="profile-name" th:text="${user.nameUser}"/>
-        <a href="/profile/edit" > Edit profile</a>
+        <a th:href="@{'/profile/edit/' + ${user.emailUser}}" > Edit profile</a>
     </div>
 </section>
 
@@ -57,12 +57,9 @@
     <div class="profile-stats">
         <p>Auctions done:</p>
         <p>//TO DO!</p>
-        <!--p th:text="${user.auctionsDone}"/-->
     </div>
 
     <div>
-        <p class="profile-name" th:text="${user.nameUser}"/>
-
         <p class="data-name">Username</p>
         <p th:text="${user.username}"/>
 
@@ -75,7 +72,7 @@
         <p class="e-mail">E-mail</p>
         <p th:text="${user.emailUser}"/>
 
-        <p class="birthdate">Birthday</p>
+        <p class="birthdate">Birthdate</p>
         <p th:text="${user.birthdate}"/>
     </div>
 </section>
@@ -117,7 +114,7 @@
 </section -->
 
 <div class="home-link">
-    <a href="/">Torna alla Home</a>
+    <a href="/">Back to Home</a>
 </div>
 
 <script src="js/account.js"></script>
