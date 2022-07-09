@@ -70,9 +70,15 @@
 
             <form th:action="@{/log-in}" th:object="${loginForm}" method="post">
                 <input type="text" th:field="*{username}" id="username" placeholder="Username">
-                <label th:if="${#fields.hasErrors('username')}" th:errors="*{username}" />
+                <div class="error-log-in">
+                    <label th:if="${#fields.hasErrors('username')}" th:errors="*{username}" />
+                </div>
+
                 <input type="password" th:field="*{pass}" id="password" placeholder="Password">
-                <label th:if="${#fields.hasErrors('pass')}" th:errors="*{pass}" />
+                <div class="error-log-in">
+                    <label th:if="${#fields.hasErrors('pass')}" th:errors="*{pass}" />
+                </div>
+
 
                 <a href="">Forgot password?</a>
 
@@ -87,6 +93,8 @@
                 <a href="#apple"><div class="option"><img src="/img/brands/apple.png" alt=""></div></a>
             </div>
 
+
+
             <div class="no-account">
                 <h4>Don't have an account?</h4>
                 <a href="/sign-up">Sing up</a>
@@ -94,6 +102,7 @@
         </div>
     </div>
 </section>
+
 
 
 
