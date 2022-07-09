@@ -16,14 +16,14 @@ public class AppController {
     private ProductService service;
 
 
-/*
-    @GetMapping("/result")
-    public String showProdcutsSearched(@RequestParam("term") String term, Model model) {
-        List<Product> result = service.listAll();
-        model.addAttribute("result", result);
-        return "result";
+    @RequestMapping("/searched-products")
+    public String showProductSerched(Model model, String keyword) {
+            List<Product> list = service.getByKeyword(keyword);
+            model.addAttribute("list", list);
+            model.addAttribute("keyword", keyword);
+        return "searched-products";
     }
-*/
+
     @RequestMapping("/product-list")
     public String viewHomepage(Model model) {
         List<Product> listProducts = service.listAll();
