@@ -14,6 +14,79 @@
 
 <h1>Auctive</h1>
 <br>
+
+<header>
+    <div class="logo">
+        <a href="index.html">
+            <img src="/img/logo.png" alt="">
+            <h2>Auctive</h2>
+        </a>
+    </div>
+
+    <nav>
+        <a href="index.html">home</a>
+        <a href="">about</a>
+        <a href="">auction</a>
+        <a href="log-in/">log-in</a>
+    </nav>
+
+    <nav class="mobile-nav" id="mobile-nav">
+        <div class="hamburger_line"></div>
+        <div class="hamburger_line"></div>
+        <div class="hamburger_line"></div>
+    </nav>
+
+
+    <div class="mobile-nav_options_container" id="mobile-nav_options_container">
+        <a href="">home</a>
+        <a href="">about</a>
+        <a href="">auction</a>
+        <a href="log-in/">log-in</a>
+        <div id="mobile-nav_options_container-exit">
+            <i class="fa-solid fa-xmark"></i>
+        </div>
+    </div>
+</header>
+
+<div class="sub-nav">
+    <ul>
+        <a href="#Art"><li>Art</li></a>
+        <a href="#Books"><li>Books</li></a>
+        <a href="#Movies"><li>Movies</li></a>
+        <a href="#Toys"><li>Toys</li></a>
+        <a href="#Ancient_coins"><li>Ancient coins</li></a>
+        <a href="#Paintings"><li>Paintings</li></a>
+        <a href="#Antiques_trades"><li>Antiques trades</li></a>
+        <a href="#Picture_cards"><li>Picture cards</li></a>
+        <a href="#Computers"><li>Computers</li></a>
+        <a href="#Luggage"><li>Luggage</li></a>
+        <a href="#Automotive"><li>Automotive</li></a>
+        <a href="#NFTs"><li>NFTs</li></a>
+    </ul>
+</div>
+
+
+<div class="background_wallpaper">
+    <div class="impact">
+        <div class="composed_logo">
+            <img src="/img/logo.png" alt="">
+            <h2>Auctive</h2>
+        </div>
+    </div>
+    <form name="searched-products" action="searched-products" method="get" class="centered_search-bar" id="search_bar">
+        <input type="text" name="keyword" th:value="${keyword}" placeholder="Search for your next treasure">
+        <input type="submit" value="Submit" class="fa-solid fa-magnifying-glass">
+    </form>
+</div>
+
+<div class="text-center">
+    <a href="product-list" class="text-center">Lista Di Tutti I Prodotti</a>
+</div>
+
+
+<script src="/js/index.js"></script>
+<script src="/js/home.js"></script>
+
 <!--
 <form name="searched-products" action="searched-products" method="get">
     <input type="text" name="keyword" th:value="${keyword}" placeholder="Search for your next treasure">
