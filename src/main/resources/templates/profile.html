@@ -12,7 +12,7 @@
 
 <body id="profile-body">
 
-<section class="profile-data-section" id="profile-section">
+<section class="profile-data-section" id="profile-data">
     <div class="your-profile">
         <h2 class="profile-username" th:text="${user.username}"/>
         <p class="profile-name" th:text="${user.nameUser}"/>
@@ -22,21 +22,19 @@
 
 <section>
     <div>
-        <p>Active</p>
+        <button id="profile-collection-button">Collection</button>
     </div>
     <div>
-        <p>Collection</p>
-    </div>
-    <div>
-        <p>Info</p>
+        <button id="profile-info-button">Info</button>
     </div>
 </section>
 
 <!-- Active and Collections -->
-<!-- section class="profile-product-container">
+<section id="profile-collection">
     <div class="profile-product-card">
-        <div class="profile-product-img">
-            < img th:src="@{'/img/products/' + ${user.getPu().getproductImageUrl()}}">
+        <h1> PRODOTTI </h1>
+        <!--div class="profile-product-img">
+            <img th:src="@{'/img/products/' + ${user.getPu().getproductImageUrl()}}">
         </div>
 
         <div class="profile-product-name">
@@ -45,12 +43,12 @@
 
         <div class="profile-product-description">
             <p th:text="${user.getPu().getProductDescription()}"/>
-        </div>
+        </div-->
     </div>
-</section-->
+</section>
 
 <!-- Info -->
-<section class="profile-info">
+<section id="profile-info">
 
     <h1 class="profile-stats-title">Info</h1>
 
@@ -117,7 +115,7 @@
     <a href="/">Back to Home</a>
 </div>
 
-<script src="js/account.js"></script>
+<script src="js/profile.js"></script>
 <script src="https://kit.fontawesome.com/130673bc48.js" crossorigin="anonymous"></script>
 
 </body>
