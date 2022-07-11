@@ -12,8 +12,13 @@ public class Card {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer idCard;
 
-    @NotNull(message = "idUser deve essere inserito")
-    int idUser;
+    @Size(min=2, max=50, message = "Nome deve essere tra 2 e 50 caratteri")
+    @NotNull
+    String nameUserCard;
+
+    @Size(min=2, max=50, message = "Cognome deve essere tra 2 e 50 caratteri")
+    @NotNull
+    String surnameUserCard;
 
     @Size(min = 15, max = 19)
     @NotNull(message = "cardNumver deve essere inserito")
@@ -34,13 +39,12 @@ public class Card {
 
     }
 
-    public Card(Integer idCard, int idUser, Integer cardNumber, Date expireDate, String cvv, User userCard) {
-        this.idCard = idCard;
-        this.idUser = idUser;
+    public Card(String nameUserCard, String surnameUserCard, Integer cardNumber, Date expireDate, String cvv) {
+        this.nameUserCard = nameUserCard;
+        this.surnameUserCard = surnameUserCard;
         this.cardNumber = cardNumber;
         this.expireDate = expireDate;
         this.cvv = cvv;
-        this.userCard = userCard;
     }
 
     public Integer getIdCard() {
@@ -51,12 +55,20 @@ public class Card {
         this.idCard = idCard;
     }
 
-    public int getIdUser() {
-        return idUser;
+    public String getNameUserCard() {
+        return nameUserCard;
     }
 
-    public void setIdUser(int idUser) {
-        this.idUser = idUser;
+    public void setNameUserCard(String nameUserCard) {
+        this.nameUserCard = nameUserCard;
+    }
+
+    public String getSurnameUserCard() {
+        return surnameUserCard;
+    }
+
+    public void setSurnameUserCard(String surnameUserCard) {
+        this.surnameUserCard = surnameUserCard;
     }
 
     public Integer getCardNumber() {
@@ -95,7 +107,8 @@ public class Card {
     public String toString() {
         return "Card{" +
                 "idCard=" + idCard +
-                ", idUser=" + idUser +
+                ", nameUserCard='" + nameUserCard + '\'' +
+                ", surnameUserCard='" + surnameUserCard + '\'' +
                 ", cardNumber=" + cardNumber +
                 ", expireDate=" + expireDate +
                 ", cvv='" + cvv + '\'' +
