@@ -1,33 +1,28 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <link rel="stylesheet" href="/css/index.css">
-    <link rel="stylesheet" href="../static/fonts/stylesheet.css">
+    <link rel="stylesheet" href="/css/main.css">
+    <link rel="stylesheet" href="/css/home.css">
+    <link rel="stylesheet" href="/fonts/stylesheet.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://kit.fontawesome.com/9d05a115fd.js" crossorigin="anonymous"></script>
     <title>Auctive</title>
 </head>
-
 <body>
-
-<h1>Auctive</h1>
-<br>
-
 <header>
     <div class="logo">
-        <a href="index.html">
+        <a href="/">
             <img src="/img/logo.png" alt="">
-            <h2>Auctive</h2>
+            <h2>uctive</h2>
         </a>
     </div>
-
     <nav>
-        <a href="index.html">home</a>
-        <a href="">about</a>
-        <a href="">auction</a>
-        <a href="log-in/">log-in</a>
+        <a href="/">home</a>
+        <a href="#">about</a>
+        <a href="/auctions">auction</a>
+        <a href="/log-in">log-in</a>
     </nav>
 
     <nav class="mobile-nav" id="mobile-nav">
@@ -70,33 +65,21 @@
     <div class="impact">
         <div class="composed_logo">
             <img src="/img/logo.png" alt="">
-            <h2>Auctive</h2>
+            <h2>uctive</h2>
         </div>
+        <p>Get the right value from your items.</p>
     </div>
-    <form name="searched-products" action="searched-products" method="get" class="centered_search-bar" id="search_bar">
-        <input type="text" name="keyword" th:value="${keyword}" placeholder="Search for your next treasure">
-        <input type="submit" value="Submit" class="fa-solid fa-magnifying-glass">
-    </form>
+    <div class="centered_search-bar" id="search_bar">
+        <form name="searched-products" action="searched-products" method="get" class="centered_search-bar">
+          <button type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
+            <input type="text" id="search_input" name="keyword" th:value="${keyword}" placeholder="Search for your next treasure">
+        </form>
+    </div>
 </div>
 
-<div class="text-center">
-    <a href="product-list" class="text-center">Lista Di Tutti I Prodotti</a>
-</div>
 
-
-<script src="/js/index.js"></script>
-<script src="/js/home.js"></script>
-
-<!--
-<form name="searched-products" action="searched-products" method="get">
-    <input type="text" name="keyword" th:value="${keyword}" placeholder="Search for your next treasure">
-    <input type="submit" value="Submit">
-    <div class="text-center">
-        <a href="product-list" class="text-center">Lista Di Tutti I Prodotti</a>
-    </div>
-</form> -->
-
-
+<script src="/static/js/index.js"></script>
+<script src="/static/js/home.js"></script>
 
 </body>
 </html>
