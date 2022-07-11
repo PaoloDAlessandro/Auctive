@@ -1,0 +1,48 @@
+<!DOCTYPE HTML>
+<html xmlns:th="https://www.thymeleaf.org">
+<head>
+    <title>Auctive</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="/css/product-list.css">
+</head>
+<body>
+
+    <h1>HAI CERCATO:</h1>
+
+    <br>
+    <br>
+
+    <h1 th:text="'Termine: ' +${keyword}" />
+
+    <br>
+    <br>
+    <div align="center">
+    <table border="1" cellpadding="10">
+        <thead>
+        <th>Prdocuct ID</th>
+        <th>Product Name</th>
+        <th>Product Description</th>
+        <th>Product Image Url</th>
+        <th>Brand</th>
+        </thead>
+        <tbody>
+        <tr th:each="l : ${list}">
+            <td th:text="${l.idProduct}">Product ID</td>
+            <td th:text="${l.productName}">Name</td>
+            <td th:text="${l.productDescription}">Description</td>
+            <td th:text="${l.getproductImageUrl()}">Image</td>
+            <td th:text="${l.brand}">Brand</td>
+        </tr>
+        </tbody>
+    </table>
+    </div>
+
+    <br>
+    <br>
+
+    <div class="home-link">
+        <a href="/">Torna alla Home</a>
+    </div>
+
+</body>
+</html>

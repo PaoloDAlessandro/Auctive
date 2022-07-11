@@ -14,22 +14,18 @@ public class Offer {
     @NotNull(message = "offerValue deve essere inserito")
     Double offerValue;
 
-    @ManyToOne
-    @JoinColumn
-    User user;
-
-    @ManyToOne
-    @JoinColumn
-    Auction auction;
+    @NotNull
+    Integer id_user;
+    @NotNull
+    Integer id_auction;
 
     public Offer() {
     }
 
-    public Offer(Integer idOffer, Double offerValue, User user, Auction auction) {
-        this.idOffer = idOffer;
+    public Offer(Double offerValue, Integer id_user, Integer id_auction) {
         this.offerValue = offerValue;
-        this.user = user;
-        this.auction = auction;
+        this.id_user = id_user;
+        this.id_auction = id_auction;
     }
 
     public Integer getIdOffer() {
@@ -48,30 +44,21 @@ public class Offer {
         this.offerValue = offerValue;
     }
 
-    public User getUser() {
-        return user;
+
+    public Integer getId_user() {
+        return id_user;
     }
 
-    public void setUser(User user) {
-        this.user = user;
+    public void setId_user(Integer id_user) {
+        this.id_user = id_user;
     }
 
-    public Auction getAuction() {
-        return auction;
+    public Integer getId_auction() {
+        return id_auction;
     }
 
-    public void setAuction(Auction auction) {
-        this.auction = auction;
-    }
-
-    @Override
-    public String toString() {
-        return "Offer{" +
-                "idOffer=" + idOffer +
-                ", offerValue=" + offerValue +
-                ", user=" + user +
-                ", auction=" + auction +
-                '}';
+    public void setId_auction(Integer id_auction) {
+        this.id_auction = id_auction;
     }
 }
 

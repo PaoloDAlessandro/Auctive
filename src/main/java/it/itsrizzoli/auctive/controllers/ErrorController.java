@@ -8,11 +8,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 import javax.servlet.http.HttpSession;
 
-@Controller
+/*@Controller
 @RequestMapping(value = "/error")
 public class ErrorController {
     @GetMapping("")
     public String getError() {
         return "error";
     }
-}
+}*/

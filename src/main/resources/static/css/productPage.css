@@ -1,0 +1,104 @@
+@import url('https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+
+* {
+    font-family: 'Archivo', sans-serif;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.auction_container {
+    display: flex;
+    padding-top: 20vh;
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    justify-content: space-around;
+}
+
+.auction_img {
+    width: 30%;
+}
+
+.auction_img img {
+    width: 100%;
+    height: 420px;
+    object-fit: contain;
+    margin-top: 4vh;
+}
+
+.auction_content {
+    padding: 40px 20px;
+    width: 50%;
+    border: 1px solid rgba(0,0,0,.2);
+    border-radius: 19px;
+    box-shadow: rgb(0 0 0 / 4%) 0px 4px 6px -1px, rgb(0 0 0 / 6%) 0px 2px 4px -1px;
+}
+
+.auction_content h2 {
+    color: #222222;
+    font-size: 24px;
+}
+
+.auction_content h3 {
+    color: black;
+    font-weight: 700;
+    margin-top: 4vh;
+    font-size: 28px;
+}
+
+.auction_content h4 {
+    color: #565b60;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.auction_container h5 {
+    font-size: 16px;
+    color: #0f1111;
+    font-weight: 500;
+    margin-top: 4vh;
+    margin-bottom: 4px;
+}
+
+.auction_content p {
+    line-height: 20px;
+    font-size: 14px;
+}
+
+.auction_offer {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    margin-top: 6vh;
+}
+
+.auction_offer-title {
+    width: 100%;
+}
+
+.auction_offer-title h4 {
+    text-align: center;
+    color: #222222;
+    font-size: 20px;
+}
+
+.auction_offer-options {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 3vh;
+}
+
+.auction_offer-options a {
+    padding: 10px 18px;
+    background-color:rgba(46, 71, 214, .9) ;
+    text-decoration: none;
+    color: #f2f2f2;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+    transition: .2s;
+}
+
+.auction_offer-options a:hover {
+    background-color:rgba(46, 71, 214, 1) ;
+    box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;}

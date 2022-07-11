@@ -1,5 +1,6 @@
 package it.itsrizzoli.auctive.model;
 
+import org.hibernate.validator.constraints.UniqueElements;
 import org.springframework.format.annotation.DateTimeFormat;
 
 import java.time.LocalDate;
@@ -28,6 +29,7 @@ public class User {
 
 	@Size(min=4, max=319, message = "Email deve esser tra 5 e 25 caratteri")
 	@Email(message = "Email inserita non valida")
+	@Column(unique = true)
 	@NotNull(message = "Email deve esser inserito")
 	String emailUser;
 
@@ -71,7 +73,6 @@ public class User {
 		this.username = username;
 		this.pass = pass;
 		this.confermapass = "password";
-		//this.sex = sex;
 		this.address = address;
 		this.birthdate = birthdate;
 	}

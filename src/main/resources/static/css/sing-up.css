@@ -103,3 +103,13 @@
     }
 
 }
+
+#arrow{
+    top:23%;
+    left:50%;
+    font-size:35px;
+    z-index:1000;
+    display:none;
+    position:relative;
+    color:#A47E1B;
+}
