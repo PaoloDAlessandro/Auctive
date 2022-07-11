@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/css/productPage.css">
     <link rel="stylesheet" href="/css/header.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="https://kit.fontawesome.com/9d05a115fd.js" crossorigin="anonymous"></script>
     <title>Auction</title>
 </head>
@@ -62,15 +63,16 @@
                 <h4>Place a bid</h4>
 
                 <div class="auction_offer-options">
-                    <a th:text="${auction.getStarterPrice() + 2.5} + '$'" href=""></a>
-                    <a th:text="${auction.getStarterPrice() + 5} + '$'" href=""></a>
-                    <a th:text="${auction.getStarterPrice() + 10} + '$'" href=""></a>
+                    <a th:text="${auction.getStarterPrice() + 2.5} + '$'" id="firstOption" th:href="'/auction/placeABid?id_product=2&value=' + ${auction.getStarterPrice() + 2.5}"></a>
+                    <a th:text="${auction.getStarterPrice() + 10} + '$'" id="secondOption" th:href="'/auction/placeABid?id_product=2&value=' + ${auction.getStarterPrice() + 10}"></a>
+                    <a th:text="${auction.getStarterPrice() + 15} + '$'" id="thirdOption" th:href="'/auction/placeABid?id_product=2&value=' + ${auction.getStarterPrice() + 15}"></a>
                 </div>
             </div>
         </div>
 
     </div>
 </div>
+
 
 </body>
 </html>

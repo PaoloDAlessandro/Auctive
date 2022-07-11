@@ -82,7 +82,7 @@
                 <input type="password" th:field="*{pass}" id="password" class="second-inputs" placeholder="Password">
                 <label th:if="${#fields.hasErrors('pass')}" th:errors="*{pass}" />
                 <input type="password" th:field="*{confermapass}" class="second-inputs" id="confirm_password" placeholder="Confirm password">
-                <label th:if="${#fields.hasErrors('confermapass')}" th:errors="*{conferma_pass}" />
+                <label th:if="${#fields.hasErrors('confermapass')}" th:errors="*{confermapass}" />
                 <input type="text" th:field="*{address}" placeholder="Address" class="first-inputs" id="address">
                 <label th:if="${#fields.hasErrors('address')}" th:errors="*{address}"/>
                 <input type="button" value="Next" id="next" class="first-inputs"/>

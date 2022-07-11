@@ -19,7 +19,7 @@ public class LogIn_SignUpController {
     @Autowired
     UserRepository userRepository;
 
-    @GetMapping("/sign-up")
+        @GetMapping("/sign-up")
     public String getSignup(User user) {
         return "sign-up";
     }
