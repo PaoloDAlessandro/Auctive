@@ -12,11 +12,11 @@ public class ProductService {
     @Autowired
     private ProductRepository repo;
 
-/*
+
     public List<Product> getByKeyword(String keyword){
         return repo.findByKeyword(keyword);
     }
-*/
+
     public List<Product> listAll() {
         return (List<Product>) repo.findAll();
     }
