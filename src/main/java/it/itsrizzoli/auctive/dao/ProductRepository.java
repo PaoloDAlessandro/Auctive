@@ -9,6 +9,6 @@ import java.util.List;
 
 public interface ProductRepository extends JpaRepository<Product, Integer> {
 
-    @Query("select * form products where product_name like '%' || :keyword || '%';")
-    List<Product> findByKeyword(@Param("keyword") String keyword);
+    //@Query("select * form products where product_name like '%' || :keyword || '%';")
+    //List<Product> findByKeyword(@Param("keyword") String keyword);
 }

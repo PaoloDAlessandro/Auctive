@@ -28,8 +28,6 @@ public class Auction {
     @NotNull(message = "endDate deve essere inserita")
     Date endDate;
 
-    @OneToMany
-    Set<Offer> offers = new HashSet<>();
 
     @OneToOne
     Product product;
@@ -37,23 +35,19 @@ public class Auction {
     public Auction() {
     }
 
-    public Auction(Integer idAuction, Double starterPrice, String auctionDescription, Date starterDate, Date endDate, Product product, Set<Offer> offers) {
+    public Auction(Integer idAuction, Double starterPrice, String auctionDescription, Date starterDate, Date endDate, Product product) {
         this.idAuction = idAuction;
         this.starterPrice = starterPrice;
         this.auctionDescription = auctionDescription;
         this.starterDate = starterDate;
         this.endDate = endDate;
         this.product = product;
-        this.offers = offers;
     }
 
     public Integer getIdAuction() {
         return idAuction;
     }
 
-    public Set<Offer> getOffers() {
-        return offers;
-    }
     public void setIdAuction(Integer idAuction) {
         this.idAuction = idAuction;
     }

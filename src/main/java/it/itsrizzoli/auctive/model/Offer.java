@@ -19,14 +19,6 @@ public class Offer {
     @NotNull
     Integer id_auction;
 
-    @ManyToOne
-    @JoinColumn
-    User user;
-
-    @ManyToOne
-    @JoinColumn
-    Auction auction;
-
     public Offer() {
     }
 
@@ -52,31 +44,6 @@ public class Offer {
         this.offerValue = offerValue;
     }
 
-    public User getUser() {
-        return user;
-    }
-
-    public void setUser(User user) {
-        this.user = user;
-    }
-
-    public Auction getAuction() {
-        return auction;
-    }
-
-    public void setAuction(Auction auction) {
-        this.auction = auction;
-    }
-
-    @Override
-    public String toString() {
-        return "Offer{" +
-                "idOffer=" + idOffer +
-                ", offerValue=" + offerValue +
-                ", user=" + user +
-                ", auction=" + auction +
-                '}';
-    }
 
     public Integer getId_user() {
         return id_user;

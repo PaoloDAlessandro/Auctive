@@ -15,7 +15,7 @@ public class AppController {
     @Autowired
     private ProductService service;
 
-
+/*
     @RequestMapping("/searched-products")
     public String showProductSerched(Model model, String keyword) {
             List<Product> list = service.getByKeyword(keyword);
@@ -23,7 +23,7 @@ public class AppController {
             model.addAttribute("keyword", keyword);
         return "searched-products";
     }
-
+*/
     @RequestMapping("/product-list")
     public String viewHomepage(Model model) {
         List<Product> listProducts = service.listAll();
