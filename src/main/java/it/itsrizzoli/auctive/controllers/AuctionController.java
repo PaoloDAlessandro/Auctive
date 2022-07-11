@@ -1,10 +1,13 @@
 package it.itsrizzoli.auctive.controllers;
 
+import it.itsrizzoli.auctive.AuctionService;
+import it.itsrizzoli.auctive.ProductService;
 import it.itsrizzoli.auctive.dao.AuctionRepository;
 import it.itsrizzoli.auctive.dao.OfferRepository;
 import it.itsrizzoli.auctive.dao.UserRepository;
 import it.itsrizzoli.auctive.model.Auction;
 import it.itsrizzoli.auctive.model.Offer;
+import it.itsrizzoli.auctive.model.Product;
 import it.itsrizzoli.auctive.model.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -16,10 +19,10 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.servlet.http.HttpSession;
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Optional;
 
 @Controller
-@RequestMapping(value = "/auction")
 public class AuctionController {
     @Autowired
     private AuctionRepository auctionRepository;
@@ -30,7 +33,10 @@ public class AuctionController {
     @Autowired
     private OfferRepository offerRepository;
 
-    @GetMapping(path = "/all")
+    @Autowired
+    private AuctionService service;
+
+    @GetMapping(path = "/auctions")
     public String getAllAuctions(Model m, User user, HttpSession session) {
         ArrayList<Auction> list = (ArrayList<Auction>) auctionRepository.findAll();
         user = getuserSession(m, user, session);
@@ -63,5 +69,16 @@ public class AuctionController {
             m.addAttribute("auction", au);
         }
         return "productPage";
+    }
+
+    @RequestMapping("/searched-products")
+    public String showProductSerched(Model model, String keyword) {
+        List<Auction> list = service.getByKeyword(keyword);
+        if (list.isEmpty()) {
+            return "no-result";
+        }
+        model.addAttribute("list", list);
+        model.addAttribute("keyword", keyword);
+        return "searched-products";
     }
 }

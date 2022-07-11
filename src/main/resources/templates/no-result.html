@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/css/auctive.css">
     <link rel="stylesheet" href="/css/header.css">
+    <link rel="stylesheet" href="/css/no-result.css">
     <script src="https://kit.fontawesome.com/9d05a115fd.js" crossorigin="anonymous"></script>
     <title>Auction</title>
 </head>
@@ -44,28 +45,11 @@
 </header>
 
 
-<section class="auction_container">
-    <th:block th:each="auction : ${list}">
-        <div class="auction_card">
-            <div class="auction_card-img">
-                <img th:src="@{'/img/products/' + ${auction.getProduct().getproductImageUrl()}}">
-            </div>
+<div class="no-data">
+    <img src="/img/no_data.svg">
+    <h4>No result 😔</h4>
+</div>
 
-            <div class="auction_card-info">
-                <div class="auction_card-content">
-                    <h4 th:text="${auction.product.getProductName()}"></h4>
-                    <h6>By Robert Hanu</h6>
-                </div>
-
-                <div class="auction_card-content_bottom">
-                    <h6>Mancano 5 giorni</h6>
-                    <a th:href="@{'/product?id=' + ${auction.getIdAuction()}}">Make an offer</a>
-                </div>
-            </div>
-        </div>
-    </th:block>
-
-</section>
 
 </body>
 </html>

@@ -33,14 +33,14 @@ public class AppController {
     private UserRepository userRepository;
 
 
-    @RequestMapping("/searched-products")
+/*    @RequestMapping("/searched-products")
     public String showProductSerched(Model model, String keyword) {
             List<Product> list = service.getByKeyword(keyword);
             model.addAttribute("list", list);
             model.addAttribute("keyword", keyword);
         return "searched-products";
     }
-
+*/
     @RequestMapping("/product-list")
     public String viewHomepage(Model model) {
         List<Product> listProducts = service.listAll();

@@ -1,0 +1,17 @@
+.no-data {
+    width: fit-content;
+    margin-right: auto;
+    margin-left: auto;
+    padding-top: 20vh;
+}
+
+.no-data img {
+    width: 200px;
+}
+
+.no-data h4 {
+    text-align: center;
+    margin-top: 32px;
+    color: #212121;
+    font-size: 32px;
+}
