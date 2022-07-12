@@ -10,7 +10,6 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.HttpSession;
-import java.time.LocalDate;
 import java.util.List;
 
 @Controller
@@ -73,9 +72,7 @@ public class AccountController {
     @RequestMapping("/logout")
     public String logout(HttpSession session) {
         session.setAttribute("userLogged", null);
-        session.getAttribute("userLogged");
 
         return "redirect:/log-in";
     }
-
 }

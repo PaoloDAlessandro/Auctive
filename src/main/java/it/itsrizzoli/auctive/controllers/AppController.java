@@ -41,6 +41,8 @@ public class AppController {
         return "searched-products";
     }
 
+ */
+
     @RequestMapping("/product-list")
     public String viewHomepage(Model model) {
         List<Product> listProducts = service.listAll();
@@ -48,7 +50,6 @@ public class AppController {
         return "product-list";
     }
 
- */
 
     @RequestMapping("/new")
     public String showNewProductForm(Model model, HttpSession session) {

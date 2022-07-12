@@ -27,9 +27,7 @@ public class HomepageController {
     @GetMapping("/")
     public String getHomepage(Model model, User user, HttpSession session) {
         user = userRepository.findByEmailUser((String) session.getAttribute("userLogged"));
-        System.out.println(user);
         model.addAttribute("user", user);
-
         return "/index";
     }
 

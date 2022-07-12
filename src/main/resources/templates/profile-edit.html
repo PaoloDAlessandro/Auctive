@@ -4,13 +4,13 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- <link rel="stylesheet" href="css/profile.css"/> -->
     <link rel="stylesheet" href="/css/header.css"/>
+    <link rel="stylesheet" href="/css/profile.css"/>
     <link rel="stylesheet" href="fonts/stylesheet.css"/>
     <title>Profile</title>
 </head>
 
-<body id="profile-edit-body">
+<body class="profile-edit">
 
 <header>
     <div class="logo">
@@ -44,50 +44,55 @@
     </div>
 </header>
 
-<div align="center">
-    <h1>Edit Profile</h1>
-    <br/>
-    <form action="#" th:action="@{/profile/edit}" th:object="${user}" method="post">
-        <table border="0" cellpadding="10">
-            <tr>
-                <td>Username:</td>
-                <td><input type="text" th:field="*{username}" readonly="readonly"/></td>
-            </tr>
-            <tr>
-                <td>Name:</td>
-                <td><input type="text" th:field="*{nameUser}"/></td>
-            </tr>
-            <tr>
-                <td>Surname:</td>
-                <td><input type="text" th:field="*{surnameUser}"/></td>
-            </tr>
-            <tr>
-                <td>E-mail:</td>
-                <td><input type="email" th:field="*{emailUser}"/></td>
-            </tr>
-            <tr>
-                <td>Password:</td>
-                <td><input type="password" th:field="*{pass}"/></td>
-            </tr>
-            <tr>
-                <td>Confirm Password:</td>
-                <td><input type="password" th:field="*{confermapass}"/></td>
-            </tr>
-            <tr>
-                <td>Address:</td>
-                <td><input type="text" th:field="*{address}"/></td>
-            </tr>
-            <tr>
-                <td>Birthdate:</td>
-                <td><input type="date" th:field="*{birthdate}"/></td>
-            </tr>
-            <tr>
-                <td><button class="profile-edit-save" type="submit">Save</button></td>
-                <td><button class="profile-edit-reset" type="reset">Back</button></td>
-            </tr>
-        </table>
-    </form>
+<div>
+    <div class="profile-edit-container">
+        <h1 class="profile-tile">Edit Profile</h1>
+        <br/>
+        <form action="#" th:action="@{/profile/edit}" th:object="${user}" method="post">
+            <table border="0" cellpadding="10">
+                <tr>
+                    <td>Username:</td>
+                    <td><input type="text" th:field="*{username}" readonly="readonly"/></td>
+                </tr>
+                <tr>
+                    <td>Name:</td>
+                    <td><input type="text" th:field="*{nameUser}"/></td>
+                </tr>
+                <tr>
+                    <td>Surname:</td>
+                    <td><input type="text" th:field="*{surnameUser}"/></td>
+                </tr>
+                <tr>
+                    <td>E-mail:</td>
+                    <td><input type="email" th:field="*{emailUser}"/></td>
+                </tr>
+                <tr>
+                    <td>Password:</td>
+                    <td><input type="password" th:field="*{pass}"/></td>
+                </tr>
+                <tr>
+                    <td>Confirm Password:</td>
+                    <td><input type="password" th:field="*{confermapass}"/></td>
+                </tr>
+                <tr>
+                    <td>Address:</td>
+                    <td><input type="text" th:field="*{address}"/></td>
+                </tr>
+                <tr>
+                    <td>Birthdate:</td>
+                    <td><input type="date" th:field="*{birthdate}"/></td>
+                </tr>
+                <tr>
+                    <td><button class="profile-edit-save" type="submit">Save</button></td>
+                    <td><button class="profile-edit-reset" type="reset">Reset</button></td>
+                    <td><a href="/profile"> Back </a>
+                </tr>
+            </table>
+        </form>
+    </div>
 </div>
+
+
 
 <script src="js/account.js"></script>
 <script src="https://kit.fontawesome.com/130673bc48.js" crossorigin="anonymous"></script>

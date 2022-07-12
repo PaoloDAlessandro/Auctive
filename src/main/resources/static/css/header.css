@@ -43,6 +43,36 @@ nav {
 
 }
 
+#account-popup-menu{
+
+    position: absolute;
+    font-size: 18px;
+    padding-top:5px;
+    padding-bottom:5px;
+    left: 90%;
+    top: 70px;
+    width: 10%;
+    height: auto;
+    z-index: 9999;
+    background: white;
+    box-shadow: rgba(99, 99, 99, 0.05) 0px 2px 12px 0px;
+    border-bottom: 1px solid rgba(99, 99, 99, 0.16);
+    border-left: 1px solid rgba(99, 99, 99, 0.16);
+    display:none;
+}
+
+#account-popup{
+    cursor: pointer;
+}
+
+.section-account{
+    color: #424242;
+    margin-top:1000px;
+    margin-left:10px;
+    margin-bottom:20px;
+    text-decoration:none;
+}
+
 .logo a {
     text-decoration: none;
     color: #212121;
