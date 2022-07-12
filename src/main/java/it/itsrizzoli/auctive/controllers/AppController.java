@@ -40,13 +40,15 @@ public class AppController {
             model.addAttribute("keyword", keyword);
         return "searched-products";
     }
-*/
+
     @RequestMapping("/product-list")
     public String viewHomepage(Model model) {
         List<Product> listProducts = service.listAll();
         model.addAttribute("listProducts", listProducts);
         return "product-list";
     }
+
+ */
 
     @RequestMapping("/new")
     public String showNewProductForm(Model model, HttpSession session) {
