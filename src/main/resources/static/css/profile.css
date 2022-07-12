@@ -18,6 +18,11 @@
 .profile-buttons {
 }
 
+.profile-product-img img {
+    height: 240px;
+    object-fit: contain;
+}
+
 #profile-username {
     font-style: italic;
 

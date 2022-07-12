@@ -22,7 +22,7 @@
     <nav>
         <a href="/">home</a>
         <a href="">about</a>
-        <a href="/auction/all">auction</a>
+        <a href="/auctions">auction</a>
         <a href="/sign-up">log-in</a>
     </nav>
 
@@ -63,9 +63,9 @@
                 <h4>Place a bid</h4>
 
                 <div class="auction_offer-options">
-                    <a th:text="${auction.getStarterPrice() + 2.5} + '$'" id="firstOption" th:href="'/auction/placeABid?id_product=2&value=' + ${auction.getStarterPrice() + 2.5}"></a>
-                    <a th:text="${auction.getStarterPrice() + 10} + '$'" id="secondOption" th:href="'/auction/placeABid?id_product=2&value=' + ${auction.getStarterPrice() + 10}"></a>
-                    <a th:text="${auction.getStarterPrice() + 15} + '$'" id="thirdOption" th:href="'/auction/placeABid?id_product=2&value=' + ${auction.getStarterPrice() + 15}"></a>
+                    <a th:text="${auction.getStarterPrice() * 1.05} + '$'" id="firstOption" th:href="'/placeABid?id_product=2&value=' + ${auction.getStarterPrice() * 1.05}"></a>
+                    <a th:text="${auction.getStarterPrice() * 1.1} + '$'" id="secondOption" th:href="'/placeABid?id_product=2&value=' + ${auction.getStarterPrice() * 1.1}"></a>
+                    <a th:text="${auction.getStarterPrice() * 1.2} + '$'" id="thirdOption" th:href="'/placeABid?id_product=2&value=' + ${auction.getStarterPrice() * 1.2}"></a>
                 </div>
             </div>
         </div>
