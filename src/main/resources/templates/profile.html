@@ -9,13 +9,14 @@
     <link rel="stylesheet" href="fonts/stylesheet.css"/>
 
     <title>Profile</title>
+
 </head>
 
 <body>
 
 <header>
     <div class="logo">
-        <a href="index.html">
+        <a href="/">
             <img src="/img/logo.png" alt="">
             <h2>uctive</h2>
         </a>
@@ -47,103 +48,67 @@
 </header>
 
 <div class="profile-container">
-<section id="profile">
-    <div>
-        <h2 class="profile-username" th:text="${user.username}"/>
-        <p class="profile-name" th:text="${user.nameUser}"/>
-        <a th:href="@{'/profile/edit/' + ${user.idUser}}" > Edit profile</a>
-        <a th:href="@{/profile/logout}" > Log out</a>
-    </div>
-</section>
-
-<section class="profile-buttons">
-    <div>
-        <p id="profile-collection-button">Collection</p>
-    </div>
-    <div>
-        <p id="profile-info-button">Info</p>
-    </div>
-</section>
-
-<!-- Active and Collections -->
-<section id="profile-collection">
-    <p> Products </p>
-    <div class="profile-product-card">
-        <th:block th:each="userProducts : ${userProducts}">
-            <div class="auction_card">
-                <div class="profile-product-img">
-                    <img th:src="@{'/img/products/' + ${userProducts.getProduct().getproductImageUrl()}}">
-                </div>
-
-                <div class="profile-product-name">
-                    <p th:text="${userProducts.getProduct().getProductName()}"/>
-                </div>
-
-                <div class="profile-product-description">
-                    <p th:text="${userProducts.getProduct().getProductDescription()}"/>
-                </div>
-            </div>
-        </th:block>
-    </div>
-</section>
-
-<!-- Info -->
-<section id="profile-info">
-    <h1>Info</h1>
-
-    <div>
-        <p class="data-name">Username</p>
-        <p th:text="${user.username}"/>
-
-        <p class="data-name">Name</p>
-        <p th:text="${user.nameUser}"/>
-
-        <p class="surname">Surname</p>
-        <p th:text="${user.surnameUser}"/>
-
-        <p class="e-mail">E-mail</p>
-        <p th:text="${user.emailUser}"/>
-
-        <p class="birthdate">Birthdate</p>
-        <p th:text="${user.birthdate}"/>
-    </div>
-</section>
-
-<!-- section class="account-data-section" id="payment-section">
-    <h1 class="page-title">Payment methods</h1>
-
-    <div class="scroll-cards">
-        <div class="credit-card_div">
-            <img src="img/account/master.png" class="card-image"/>
-            <h2 class="card-number">**** **** **** **90</h2>
-            <h2 class="card-owner">Marco Stefani</h2>
-            <i class="fa-solid fa-trash-can"></i>
+    <section id="profile">
+        <div>
+            <h2 class="profile-username" th:text="${user.username}"/>
+            <p class="profile-name" th:text="${user.nameUser}"/>
+            <a th:href="@{'/profile/edit/' + ${user.idUser}}" > Edit profile</a>
+            <a href="/profile/logout" > Log out</a>
+            <a href="/new" > Create Product </a>
         </div>
+    </section>
 
-        <div class="credit-card_div">
-            <img src="img/account/master.png" class="card-image"/>
-            <h2 class="card-number">**** **** **** **45</h2>
-            <h2 class="card-owner">Marco Stefani</h2>
-            <i class="fa-solid fa-trash-can"></i>
+    <section class="profile-buttons">
+        <div>
+            <p id="profile-collection-button">Collection</p>
         </div>
-    </div>
+        <div>
+            <p id="profile-info-button">Info</p>
+        </div>
+    </section>
 
-    <div class="card-information-div" id="card-information-div">
-        <i class="fa-solid fa-x" id="close-tab"></i>
-        <input class="card-info-name" type="text" placeholder="Nome"/>
-        <input class="card-info-surname" type="text" placeholder="Cognome"/>
-        <input class="card-info-number" type="text" placeholder="Numero della carta"/>
-        <input class="card-info-expiring-date" type="text" placeholder="Data di scadenza"/>
-        <input class="card-info-cvv" type="text" placeholder="CVV"/>
+    <!-- Active and Collections -->
+    <section id="profile-collection">
+        <div class="profile-product-card">
+            <th:block th:each="userProducts : ${userProducts}">
+                <div class="auction_card">
+                    <div class="profile-product-img">
+                        <img th:src="@{'/img/products/' + ${userProducts.getProduct().getproductImageUrl()}}">
+                    </div>
 
-        <input class="card-info-add" type="button" value="Add card"/>
-    </div>
+                    <div class="profile-product-name">
+                        <p th:text="${userProducts.getProduct().getProductName()}"/>
+                    </div>
 
-    <div class="bottom-div">
-        <i class="fa-solid fa-circle-plus" id="add-card"></i>
-    </div>
+                    <div class="profile-product-description">
+                        <p th:text="${userProducts.getProduct().getProductDescription()}"/>
+                    </div>
+                </div>
+            </th:block>
+        </div>
+    </section>
 
-</section -->
+    <!-- Info -->
+    <section id="profile-info">
+        <h1>Info</h1>
+
+        <div>
+            <p class="data-name">Username</p>
+            <p th:text="${user.username}"/>
+
+            <p class="data-name">Name</p>
+            <p th:text="${user.nameUser}"/>
+
+            <p class="surname">Surname</p>
+            <p th:text="${user.surnameUser}"/>
+
+            <p class="e-mail">E-mail</p>
+            <p th:text="${user.emailUser}"/>
+
+            <p class="birthdate">Birthdate</p>
+            <p th:text="${user.birthdate}"/>
+        </div>
+    </section>
 </div>
 
 <script src="js/profile.js"></script>
