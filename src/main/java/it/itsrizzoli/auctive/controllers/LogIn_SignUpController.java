@@ -40,14 +40,15 @@ public class LogIn_SignUpController {
 
 
     //logout
-    //
+    //sessione.setAttribute("utenteloggato", null);
 
     //altrimetodi se utente loggato
     //User utenteloggato = sessione.getAttribute("utenteloggato");
     //if (utenteloggayo != null) allora utente è loggato
     @GetMapping("/log-in")
-    public String getLogin(LoginForm loginForm, User user, HttpSession session) {
+    public String getLogin(LoginForm loginForm, HttpSession session) {
         session.setAttribute("userLogged", null);
+
         return "log-in";
     }
 
@@ -56,6 +57,10 @@ public class LogIn_SignUpController {
 
         if(bindingResult.hasErrors())
             return "log-in";
+
+
+        if (userRepository.login(loginForm.getUsername(), loginForm.getPass())== null){
+            return "log-in";}
 
 
         User log = userRepository.login(loginForm.getUsername(), loginForm.getPass());

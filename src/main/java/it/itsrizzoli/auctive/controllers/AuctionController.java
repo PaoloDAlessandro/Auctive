@@ -52,13 +52,12 @@ public class AuctionController {
     }
 
     @GetMapping(path = "/placeABid")
-    @ResponseBody
     public String setABid(@RequestParam int id_product, Double value, HttpSession session, Model m) {
         User user = new User();
         user = getuserSession(m, user, session);
         Offer offer = new Offer(value, user.getIdUser(), id_product);
         offerRepository.save(offer);
-        return "ciao!";
+        return "index";
     }
 
     @GetMapping(path = "/product")
