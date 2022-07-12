@@ -21,11 +21,10 @@
     </div>
     <nav>
         <a href="/">home</a>
-        <a href="">about</a>
-        <a href="/auction/all">auction</a>
-        <a th:if="${user != null}" href="/profile">profile</a>
-        <a th:unless="${user != null}" href="/log-in">log-in</a>
-
+        <a href="#">about</a>
+        <a href="/auctions">auction</a>
+        <a href="/log-in" th:if="${user == null}">log-in</a>
+        <a href="/profile" th:unless="${user == null}">profile</a>
     </nav>
 
     <nav class="mobile-nav" id="mobile-nav">
@@ -35,14 +34,7 @@
     </nav>
 
 
-    <div class="mobile-nav_options_container" id="mobile-nav_options_container">
-        <a href="/">home</a>
-        <a href="about">about</a>
-        <a href="auction">auction</a>
-        <div id="mobile-nav_options_container-exit">
-            <i class="fa-solid fa-xmark"></i>
-        </div>
-    </div>
+
 </header>
 
 <div class="sub-nav">
