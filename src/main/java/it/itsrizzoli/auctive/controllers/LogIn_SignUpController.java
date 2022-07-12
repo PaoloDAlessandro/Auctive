@@ -57,6 +57,10 @@ public class LogIn_SignUpController {
             return "log-in";
 
 
+        if (userRepository.login(loginForm.getUsername(), loginForm.getPass())== null){
+            return "log-in";}
+
+
         User log = userRepository.login(loginForm.getUsername(), loginForm.getPass());
         session.setAttribute("userLogged", log.getEmailUser());
 
