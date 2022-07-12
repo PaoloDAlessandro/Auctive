@@ -46,9 +46,6 @@ public class User {
 	@NotNull(message = "conferma deve esser inserito")
 	String confermapass;
 
-   /*@NotNull(message="Sex deve essere inserito")
-   Integer sex;*/
-
 	@DateTimeFormat(iso = DateTimeFormat.ISO.DATE)
 	@NotNull(message="birthDate deve essere inserito")
 	LocalDate birthdate;

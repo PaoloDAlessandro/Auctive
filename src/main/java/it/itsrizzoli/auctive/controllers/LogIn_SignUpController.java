@@ -57,7 +57,7 @@ public class LogIn_SignUpController {
             return "log-in";
 
 
-        User log = userRepository.login(loginForm.getUsername(), loginForm.getPass()).get(0);
+        User log = userRepository.login(loginForm.getUsername(), loginForm.getPass());
         session.setAttribute("userLogged", log.getEmailUser());
 
         return "redirect:/";

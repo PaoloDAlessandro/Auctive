@@ -4,58 +4,92 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/profile.css"/>
+    <link rel="stylesheet" href="/css/header.css"/>
+    <link rel="stylesheet" href="/css/profile.css"/>
     <link rel="stylesheet" href="fonts/stylesheet.css"/>
 
     <title>Profile</title>
 </head>
 
-<body id="profile-body">
+<body>
 
-<section class="profile-data-section" id="profile-data">
-    <div class="your-profile">
+<header>
+    <div class="logo">
+        <a href="index.html">
+            <img src="/img/logo.png" alt="">
+            <h2>uctive</h2>
+        </a>
+    </div>
+    <nav>
+        <a href="/">home</a>
+        <a href="">about</a>
+        <a href="/auction/all">auction</a>
+        <a th:if="${user != null}" href="/profile">profile</a>
+        <a th:unless="${user != null}" href="/log-in">log-in</a>
+
+    </nav>
+
+    <nav class="mobile-nav" id="mobile-nav">
+        <div class="hamburger_line"></div>
+        <div class="hamburger_line"></div>
+        <div class="hamburger_line"></div>
+    </nav>
+
+
+    <div class="mobile-nav_options_container" id="mobile-nav_options_container">
+        <a href="/">home</a>
+        <a href="about">about</a>
+        <a href="auction">auction</a>
+        <div id="mobile-nav_options_container-exit">
+            <i class="fa-solid fa-xmark"></i>
+        </div>
+    </div>
+</header>
+
+<div class="profile-container">
+<section id="profile">
+    <div>
         <h2 class="profile-username" th:text="${user.username}"/>
         <p class="profile-name" th:text="${user.nameUser}"/>
-        <a th:href="@{'/profile/edit/' + ${user.emailUser}}" > Edit profile</a>
+        <a th:href="@{'/profile/edit/' + ${user.idUser}}" > Edit profile</a>
+        <a th:href="@{/profile/logout}" > Log out</a>
     </div>
 </section>
 
-<section>
+<section class="profile-buttons">
     <div>
-        <button id="profile-collection-button">Collection</button>
+        <p id="profile-collection-button">Collection</p>
     </div>
     <div>
-        <button id="profile-info-button">Info</button>
+        <p id="profile-info-button">Info</p>
     </div>
 </section>
 
 <!-- Active and Collections -->
 <section id="profile-collection">
+    <p> Products </p>
     <div class="profile-product-card">
-        <h1> PRODOTTI </h1>
-        <!--div class="profile-product-img">
-            <img th:src="@{'/img/products/' + ${user.getPu().getproductImageUrl()}}">
-        </div>
+        <th:block th:each="userProducts : ${userProducts}">
+            <div class="auction_card">
+                <div class="profile-product-img">
+                    <img th:src="@{'/img/products/' + ${userProducts.getProduct().getproductImageUrl()}}">
+                </div>
 
-        <div class="profile-product-name">
-            <p th:text="${user.getPu().getProductName()}"/>
-        </div>
+                <div class="profile-product-name">
+                    <p th:text="${userProducts.getProduct().getProductName()}"/>
+                </div>
 
-        <div class="profile-product-description">
-            <p th:text="${user.getPu().getProductDescription()}"/>
-        </div-->
+                <div class="profile-product-description">
+                    <p th:text="${userProducts.getProduct().getProductDescription()}"/>
+                </div>
+            </div>
+        </th:block>
     </div>
 </section>
 
 <!-- Info -->
 <section id="profile-info">
-
-    <h1 class="profile-stats-title">Info</h1>
-
-    <div class="profile-stats">
-        <p>Auctions done:</p>
-        <p>//TO DO!</p>
-    </div>
+    <h1>Info</h1>
 
     <div>
         <p class="data-name">Username</p>
@@ -110,9 +144,6 @@
     </div>
 
 </section -->
-
-<div class="home-link">
-    <a href="/">Back to Home</a>
 </div>
 
 <script src="js/profile.js"></script>

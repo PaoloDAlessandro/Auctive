@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -11,18 +11,21 @@
     <title>Auctive</title>
 </head>
 <body>
+
 <header>
     <div class="logo">
-        <a href="/">
+        <a href="index.html">
             <img src="/img/logo.png" alt="">
             <h2>uctive</h2>
         </a>
     </div>
     <nav>
         <a href="/">home</a>
-        <a href="#">about</a>
-        <a href="/auctions">auction</a>
-        <a href="/log-in">log-in</a>
+        <a href="">about</a>
+        <a href="/auction/all">auction</a>
+        <a th:if="${user != null}" href="/profile">profile</a>
+        <a th:unless="${user != null}" href="/log-in">log-in</a>
+
     </nav>
 
     <nav class="mobile-nav" id="mobile-nav">
@@ -33,10 +36,9 @@
 
 
     <div class="mobile-nav_options_container" id="mobile-nav_options_container">
-        <a href="">home</a>
-        <a href="">about</a>
-        <a href="">auction</a>
-        <a href="log-in/">log-in</a>
+        <a href="/">home</a>
+        <a href="about">about</a>
+        <a href="auction">auction</a>
         <div id="mobile-nav_options_container-exit">
             <i class="fa-solid fa-xmark"></i>
         </div>

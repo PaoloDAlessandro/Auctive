@@ -15,12 +15,12 @@ public class ProductUser {
     private int quantity;
 
     @ManyToOne
-    @JoinColumn
+    @JoinColumn(name = "user_id_user")
     User user;
 
 
     @ManyToOne
-    @JoinColumn
+    @JoinColumn(name = "product_id_product")
     Product product;
 
     public ProductUser() {
@@ -36,7 +36,6 @@ public class ProductUser {
     public Integer getIdUserProduct() {
         return idUserProduct;
     }
-
     public void setIdUserProduct(Integer idUserProduct) {
         this.idUserProduct = idUserProduct;
     }
@@ -44,7 +43,6 @@ public class ProductUser {
     public int getQuantity() {
         return quantity;
     }
-
     public void setQuantity(int quantity) {
         this.quantity = quantity;
     }
@@ -52,7 +50,6 @@ public class ProductUser {
     public User getUser() {
         return user;
     }
-
     public void setUser(User user) {
         this.user = user;
     }
@@ -60,7 +57,6 @@ public class ProductUser {
     public Product getProduct() {
         return product;
     }
-
     public void setProduct(Product product) {
         this.product = product;
     }
