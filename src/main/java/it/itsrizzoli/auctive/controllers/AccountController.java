@@ -68,11 +68,4 @@ public class AccountController {
 
         return "redirect:/profile/";
     }
-
-    @RequestMapping("/logout")
-    public String logout(HttpSession session) {
-        session.setAttribute("userLogged", null);
-
-        return "redirect:/log-in";
-    }
 }

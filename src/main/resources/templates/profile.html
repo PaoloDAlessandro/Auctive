@@ -25,10 +25,14 @@
         <a href="/">home</a>
         <a href="">about</a>
         <a href="/auction/all">auction</a>
-        <a th:if="${user != null}" href="/profile">profile</a>
-        <a th:unless="${user != null}" href="/log-in">log-in</a>
-
+        <a href="/log-in" th:if="${user == null}">log-in</a>
+        <a th:unless="${user == null}" th:text="${user.username}" id="account-popup"></a>
     </nav>
+
+    <div id="account-popup-menu">
+        <a href="/profile" class="section-account">Your account</a>
+        <a href="/log-in" class="section-account">Log-out</a>
+    </div>
 
     <nav class="mobile-nav" id="mobile-nav">
         <div class="hamburger_line"></div>
@@ -52,7 +56,6 @@
             <h2 class="profile-username" th:text="${user.username}"/>
             <p class="profile-name" th:text="${user.nameUser}"/>
             <a th:href="@{'/profile/edit/' + ${user.idUser}}" > Edit profile</a>
-            <a href="/profile/logout" > Log out</a>
             <a href="/new" > Create Product </a>
         </div>
     </section>
