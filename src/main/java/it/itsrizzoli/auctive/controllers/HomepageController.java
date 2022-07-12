@@ -7,6 +7,7 @@ import it.itsrizzoli.auctive.model.ProductUser;
 import it.itsrizzoli.auctive.model.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -19,22 +20,15 @@ import java.util.List;
 
 @Controller
 public class HomepageController {
-    
+
     @Autowired
     UserRepository userRepository;
 
     @GetMapping("/")
-    public String getHomepage(HttpSession session) {
-
-        User user = userRepository.findByEmailUser((String) session.getAttribute("userLogged"));
-        ModelAndView modelAndView = new ModelAndView();
-        if (user != null){
-            modelAndView.addObject("user", user);
-            return "/index.html";
-        } else {
-            return "/index.html";
-        }
-
+    public String getHomepage(Model model, User user, HttpSession session) {
+        user = userRepository.findByEmailUser((String) session.getAttribute("userLogged"));
+        model.addAttribute("user", user);
+        return "/index";
     }
 
 }

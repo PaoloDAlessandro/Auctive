@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <link rel="stylesheet" href="/css/main.css">
     <link rel="stylesheet" href="/css/home.css">
+    <link rel="stylesheet" href="/css/header.css">
     <link rel="stylesheet" href="/fonts/stylesheet.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://kit.fontawesome.com/9d05a115fd.js" crossorigin="anonymous"></script>
@@ -21,12 +22,16 @@
     </div>
     <nav>
         <a href="/">home</a>
-        <a href="">about</a>
-        <a href="/auction/all">auction</a>
-        <a th:if="${user != null}" href="/profile">profile</a>
-        <a th:unless="${user != null}" href="/log-in">log-in</a>
-
+        <a href="#">about</a>
+        <a href="/auctions">auction</a>
+        <a href="/log-in" th:if="${user == null}">log-in</a>
+        <a th:unless="${user == null}" th:text="${user.username}" id="account-popup"></a>
     </nav>
+
+    <div id="account-popup-menu">
+        <a href="/profile" class="section-account">Your account</a>
+        <a href="/log-in" class="section-account">Log-out</a>
+    </div>
 
     <nav class="mobile-nav" id="mobile-nav">
         <div class="hamburger_line"></div>
@@ -35,14 +40,7 @@
     </nav>
 
 
-    <div class="mobile-nav_options_container" id="mobile-nav_options_container">
-        <a href="/">home</a>
-        <a href="about">about</a>
-        <a href="auction">auction</a>
-        <div id="mobile-nav_options_container-exit">
-            <i class="fa-solid fa-xmark"></i>
-        </div>
-    </div>
+
 </header>
 
 <div class="sub-nav">
@@ -80,8 +78,8 @@
 </div>
 
 
-<script src="/static/js/index.js"></script>
-<script src="/static/js/home.js"></script>
+<script src="/js/index.js"></script>
+<script src="/js/home.js"></script>
 
 </body>
 </html>
